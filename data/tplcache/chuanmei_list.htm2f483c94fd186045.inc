@@ -1,0 +1,41 @@
+<?php
+$z[0]=Array("include","",523,560);
+$z[0][4]['filename']="header.htm";
+$z[1]=Array("field","",937,959);
+$z[1][4]['name']="content1";
+$z[2]=Array("field","",1025,1047);
+$z[2][4]['name']="typename";
+$z[3]=Array("field","",1150,1172);
+$z[3][4]['name']="seotitle";
+$z[4]=Array("field","",1352,1374);
+$z[4][4]['name']="keywords";
+$z[5]=Array("field","",1431,1456);
+$z[5][4]['name']="description";
+$z[6]=Array("field","",1597,1618);
+$z[6][4]['name']="content";
+$z[7]=Array("arclist","\r\n                <div class=\"chuanmei_list_info_a\"><a href=\"[field:arcurl/]\">立即播放</a></div>\r\n                ",1678,1849);
+$z[7][4]['orderby']="pubdate";
+$z[7][4]['row']="1";
+$z[8]=Array("list","\r\n            	<li>\r\n                	<a href=\"[field:arcurl/]\" target=\"_blank\"><div class=\"chuanmei_list_flimg\"><img src=\"[field:shuimg /]\" alt=\"[field:title/]\" /></div><p>[field:title/]<br /><span>播放：[field:click /]次</span></p></a>\r\n                </li>\r\n                ",1992,2344);
+$z[8][4]['pagesize']="10";
+$z[8][4]['addfields']="shuimg";
+$z[8][4]['channelid']="1";
+$z[9]=Array("arclist","\r\n                	<li>\r\n                    	<div class=\"chuanmei_fr_img\"><a href=\"[field:arcurl/]\"><img src=\"[field:litpic /]\" alt=\"[field:title/]\" /></a></div>\r\n                        <div class=\"chuanmei_fr_title\"><a href=\"[field:arcurl/]\">[field:title/]</a></div>\r\n                    </li>\r\n                    ",2579,2973);
+$z[9][4]['titlelen']="100";
+$z[9][4]['row']="3";
+$z[9][4]['orderby']="click";
+$z[9][4]['typeid']="22";
+$z[10]=Array("arclist","\r\n                	<li>\r\n                    	<div class=\"chuanmei_fr_img\"><a href=\"[field:arcurl/]\"><img src=\"[field:litpic /]\" alt=\"[field:title/]\" /></a></div>\r\n                        <div class=\"chuanmei_fr_title\"><a href=\"[field:arcurl/]\">[field:title/]</a></div>\r\n                    </li>\r\n                    ",3248,3642);
+$z[10][4]['titlelen']="100";
+$z[10][4]['row']="3";
+$z[10][4]['orderby']="click";
+$z[10][4]['typeid']="23";
+$z[11]=Array("arclist","\r\n                	<li>\r\n                    	<div class=\"chuanmei_fr_img\"><a href=\"[field:arcurl/]\"><img src=\"[field:litpic /]\" alt=\"[field:title/]\" /></a></div>\r\n                        <div class=\"chuanmei_fr_title\"><a href=\"[field:arcurl/]\">[field:title/]</a></div>\r\n                    </li>\r\n                    ",3927,4321);
+$z[11][4]['titlelen']="100";
+$z[11][4]['row']="3";
+$z[11][4]['orderby']="click";
+$z[11][4]['typeid']="24";
+$z[12]=Array("include","",4440,4477);
+$z[12][4]['filename']="footer.htm";
+
+?>

@@ -1,0 +1,4 @@
+<li><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /><div class="video_f1_left_4">[field:title/]</div></a></li>
+                      <li><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /><div class="video_f1_left_4">[field:title/]</div></a></li>
+                      <li><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /><div class="video_f1_left_4">[field:title/]</div></a></li>
+                      <li><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /><div class="video_f1_left_4">[field:title/]</div></a></li>

@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘微圈子</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/images/js/pubu.js"></script>
+<script>
+	$(function(){
+		$('#brand-waterfall').waterfall();
+	});
+</script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+
+	<div class="xeab"></div>
+    
+    <div class="clear"></div>
+    
+    <div class="lover_count">
+
+		<div class="w1250">
+        
+            <div class="brand-list">
+            	<div class="brand-bd cle" id="brand-waterfall">
+                		<div class="item" id="brand-0" style="width:230px;">
+                        <a href="javascript:;" onclick="checkadd();" class="add_wqz"></a>
+                        </div>
+                        
+                        <script type="text/javascript">
+                        	function checkadd(){
+						        var taget_obj = document.getElementById('brand-0');   
+						        myajax = new DedeAjax(taget_obj,false,false,'','','');   
+						        myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_checkadd.php");   
+						        DedeXHTTP = null;
+						  		$('.tanchu-2').addClass('is-visible');
+							}
+							checkadd();
+                        </script>
+                      {dede:list pagesize='100' addfields='imgss,say' channelid='19'}
+                      <div class="item" id="brand-[field:global.autoindex/]" style="width:230px;">
+                      		<a name="herf[field:id/]"></a>
+                          <div class="lover_img">
+						  <script type="text/javascript">
+                            var yourString="[field:imgss /]";
+                            var result=yourString.split("|");
+                            document.write("<a href='/plus/view.php?aid=[field:id/]' target='_blank'><img src='/uploads/weiquanzi/"+result[0]+"' width='230' style='min-height:230px;max-height:600px;' id='wqzimg[field:id/]'/></a>");
+                          </script>
+                          </div>
+                          
+                          <div class="clear"></div>
+                          <div class="zan">
+                          <p><a href="javascript:;" id="zana[field:id/]" title="赞一个" class="img_on" rel="[field:id/]"><i>[field:id function="zan(@me)"/]</i></a></p>
+                          </div>
+                          
+                          <div class="seel"><i></i>[field:click /]</div>
+                          
+							<script>
+                            window._bd_share_config={
+                                "common":{
+                                    "bdSnsKey":{},
+                                    "bdDesc":"[field:description /]",
+                                    "bdText":"[field:description /]",
+                                    "bdUrl":"http://192.168.0.11/plus/view.php?aid=[field:id/]",
+                                    "bdMini":"2",
+                                    "bdMiniList":false,
+                                    "bdPic":"http://192.168.0.11/[field:litpic /]",
+                                    "bdStyle":"0",
+                                    "bdSize":"16"},
+                                    "image":{
+                                        "viewList":["weixin","sqq","tsina","qzone","tqq"],
+                                        "viewText":"分享：",
+                                        "viewSize":"16"
+                                    }};
+                                    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                            </script>
+
+                          <div class="clear"></div>
+                          <div class="lover_tx">
+                              
+                          	[field:mid runphp='yes']
+                            	$name=@me;
+                                $sql="select * from dede_member where mid =$name";
+                                $query = mysql_query($sql);
+                                $row = mysql_fetch_array($query);
+                                $userids=$row['userid'];
+                                if($row['face'] == ''){
+                                
+                                @me = '<a href="/member/index.php?uid='.$userids.'" target="_blank"><img src="/member/templets/images/dfboy.png" width="35" /></a>'; 
+                                }else{ 
+                                $face = $row['face'];
+                                @me = '<a href="/member/index.php?uid='.$userids.'" target="_blank"><img src="'.$face.'" width="35" height="35" /></a>'; 
+                                }
+                            [/field:mid]
+                              
+                          </div>
+                          <div class="lover_title" style="width:170px;">[field:say /]</div>
+                          <div class="clear"></div>
+
+                          <div style="" class="comments muted">
+                              [field:id runphp='yes']
+                              $aids=@me;
+                              $sql="SELECT f.username,f.msg,m.face,m.userid FROM dede_feedback as f LEFT JOIN dede_member as m ON f.mid=m.mid where f.aid=$aids order by f.id desc limit 1";  
+                              $query = mysql_query($sql);
+                              $row = mysql_fetch_array($query);
+                              if($row['face'] == ''){
+                                  $face = '<img src="/member/templets/images/dfboy.png" />'; 
+                              }else{ 
+                                  $face = '<img src='.$row['face'].' />'; 
+                              }
+                              if($row[username]==''){@me='';}else{
+                              @me = '<div class="comment convo clearfix"><a href="/member/index.php?uid='.$row['userid'].'" target="_blank" class="img x">'.$face.'</a><div class="content"><a href="/member/index.php?uid='.$row['userid'].'" target="_blank" class="author">'.$row['username'].'</a>:&nbsp;'.$row['msg'].'</div></div>';
+                              }
+                              [/field:id]
+                          </div>
+                          
+                          <div style="display: block;" class="write convo clearfix ">
+                              <form action="/plus/pl.php" id="formId[field:id/]" method="post" name="feedback" onsubmit="return sub[field:id/]();">
+                                <input type="hidden" name="action" value="send" />
+                                <input type="hidden" name="comtype" value="comments">
+                                <input type="hidden" name="aid" value="[field:id/]" />
+                                <input type="hidden" name="isconfirm" value="yes" />
+                              <textarea class="clear-input GridComment ani-affected"  name="msg" autocomplete="off" id="as[field:id/]" style="background-color: rgb(255, 255, 255);" placeholder="写评论..."></textarea>
+                              <input type="hidden" name="notuser" id="dcmp-submit-guest" />
+                              <button id="btnsas[field:id/]" type="button" class="grid_comment_button btn" onclick="sub[field:id/]()">添加评论</button>
+                              </form>
+                          </div>
+                        
+                          <script>
+							function sub[field:id/]() {  
+								$.ajax({  
+										cache: true,  
+										type: "POST",  
+										url:"/plus/pl.php",  
+										data:$('#formId[field:id/]').serialize(),// 你的formid  
+										async: false,  
+										error: function(request) {
+											alert("未知错误！");
+										},  
+										success: function(data) {
+											if(data=='234'){
+												alert("请休息一下来评论！");
+											}
+											if(data=='345'){
+												alert("发表成功！");
+												window.location.reload();
+											}
+											if(data=='123'){
+												$('.tanchu-2').addClass('is-visible');
+											}
+										}  
+									});
+							}  
+                          </script>
+            
+                      </div><!--item-->
+                      {/dede:list}
+                	
+                </div><!--brand-bd cle-->
+            </div><!--brand-list-->
+                       
+            <div class="cd-popup-2 tanchu-2">
+                <div class="cd-popup-container-2" id="sixin-login">
+                	<h3>用户登陆</h3>
+                    <div class="sixin-input">
+                    <form name='form1' method='POST' action='/member/index_do.php'>
+                      <input type="hidden" name="fmdo" value="login">
+                      <input type="hidden" name="dopost" value="login">
+                      <input type="hidden" name="gourl" value="/member/">
+                      <input type="hidden" value="2592000" checked="checked" name="keeptime" id="ra1"/>
+                        <p><input type="text" id="txtPassword" name="userid" class="textreg" onkeyup="STip(this.value, event);" value="手机号/邮箱" onFocus="if(this.value=='手机号/邮箱'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='手机号/邮箱'"  /></p>
+                        
+                        <p><input id="txtPassword" type="text" name="pwd" class="textreg" value="密码" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';}"/></p>
+                        <p><input id="vdcode" type="text" name="vdcode"/> <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/></p>
+                        <button id="btnSignCheck" type="submit" class="submit" />马上登陆</button>
+                        <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="submit2">免费注册</a>
+                    </form>
+                    </div>
+                    
+                    <a href="javascript:;" onclick="cdpopupclose2(-2)" class="cd-popup-close-2">close</a>
+
+                </div>
+            </div>
+                             
+			<script type="text/javascript">
+				function cdpopupclose2(ids){
+							$('.tanchu'+ids).removeClass('is-visible');
+				}
+				$(function(){ 
+					
+					$(".GridComment").click(function(){ 
+						var zan = $(this);
+						var id = zan.attr("id"); //对应id
+						var vals = zan.attr("placeholder"); //对应id
+						$('#btns'+id).show();
+						
+					});
+				
+					$(".GridComment").blur(function(){ 
+						var zan = $(this);
+						var id = zan.attr("id"); //对应id
+						var vals = $("#"+id).val() //对应id
+						if(vals==""){
+							$('#btns'+id).hide();
+						}
+						
+					});
+				
+					$(".zan a").click(function(){ 
+						var zan = $(this); 
+						var id = zan.attr("rel"); //对应id 
+						$('#zana'+id).addClass("hovers");
+						$.ajax({
+							type:"POST", 
+							url:"/zan.php", 
+							data:"id="+id, 
+							cache:false, //不缓存此页面 
+							success:function(data){ 
+								zan.html(data); 
+								zan.fadeIn(300); //渐显效果 
+							} 
+						}); 
+						return false; 
+					}); 
+				});
+			
+            jQuery(document).ready(function(){
+                $('.lover_img img').each(function(){ //jquery.each()循环读取所有图片
+                    var height = $(this).height();
+                    var width = $(this).width();
+                       $(this).css('height',height+'px');
+                });
+            });
+            </script>
+        
+        </div>
+
+    </div>
+               
+    <div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+</body>
+</html>

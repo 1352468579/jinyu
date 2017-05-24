@@ -1,0 +1,1 @@
+<li><a href="/member/index.php?uid=[field:uname/]" target="_blank"><img src="[field:face/]" width="168" /><p><b>[field:uname/]</b><i>[field:birthday function="birthday3(@me)"/]岁 178CM</i></p></a><em title="点击对话" onclick="cdpopuptrigger(2,[field:uname/])">对话</em></li>

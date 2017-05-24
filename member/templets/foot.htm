@@ -1,0 +1,39 @@
+    <div class="clear"></div>
+    
+    <div class="footer">
+    	<div class="footer1">
+            <a href="/a/about/110.html">联系客服</a>
+            <a href="/a/about/">关于我们</a>
+            <a href="/sitemap.html">网站地图</a>
+            <a href="/call.html">联系我们</a>
+            <a href="/a/about/109.html">注册条款</a>
+            <a href="/a/about/111.html">友情链接</a>
+            <a href="/a/about/112.html">招聘信息</a>
+            <a href="/call.html">意见反馈</a>
+            <a href="/a/about/113.html">隐私保护</a>
+            <a href="/a/about/114.html">帮助中心</a>
+            <a href="/a/about/115.html">交友须知</a>
+            <p>金玉良缘网是一个面向高素质单身人士的专业婚恋服务平台，在国内拥有多家股份公司的雄厚背景。</p>
+            <span>CopyRight 2017 蜀ICP备15018437号-1  地址：成都市青羊区西御街西御大厦A座25楼</span>
+        </div>
+    	<div class="footer2"><img src="/images/xy_53.jpg" /></div>
+    </div>
+    <div id="bottom-tj">
+    
+    </div>
+	<script language="javascript" type="text/javascript">  
+        function CheckLogin(){   
+          var taget_obj = document.getElementById('bottom-tj');   
+          myajax = new DedeAjax(taget_obj,false,false,'','','');
+          myajax.SendGet2("/member/ajax_tuijian.php");   
+          DedeXHTTP = null;   
+        } 
+		$(function(){ 
+			setTimeout(function(){CheckLogin();},5000); 
+		})
+    </script>
+    <script type="text/javascript">
+    	function closetj(){
+			$("#btm-tuijian").fadeOut(50);
+		}
+    </script>

@@ -1,0 +1,1 @@
+<li><a href='/member/index.php?uid=[field:userid/]' target='_blank'><img src="[field:face/]">[field:userid/]</a> [field:uname/] </a></li>

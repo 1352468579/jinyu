@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>更改头像 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript'src='templets/js/main.js'></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+</head>
+<body>
+   <?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div id="main">
+  <div id="content" class="w1000 clearfix">
+    <?php include(DEDEMEMBER."/templets/menu.php"); ?>
+    <div id="mcpmain">
+      <div id="appTab">
+        <ul>
+          <li><a href="edit_baseinfo.php">基本资料</a></li>
+          <li><a href="edit_fullinfo.php">详细资料</a></li>
+          <li><a href="edit_face.php">头像设置</a></li>
+          <li class="thisTab"><a href="edit_shiming.php">实名认证</a></li>
+        </ul>
+      </div>
+<form action="edit_shiming.php" method="post" enctype="multipart/form-data" name="form1">
+    <input type="hidden" name="dopost" value="save" />
+      <div id="mainCp">
+        <h3 class="meTitle"><strong>实名认证</strong></h3>
+         <?php
+          if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
+          {
+            $data = uc_get_user($cfg_ml->M_LoginID);
+            echo uc_avatar($data[0]);
+          }
+          else
+          {
+          ?>
+        <div class="postForm">
+<p class="cellBg">
+<img src="
+<?php
+if($cfg_ml->fields['shiming']==''){
+ echo "/member/templets/images/shiming.jpg";}
+else{
+ echo $cfg_ml->fields['shiming'];}
+?>" width="300"/>
+</p>
+<p>
+ <input name='oldshiming' type='hidden' id='oldshiming' value='<?php echo $shiming; ?>'/>
+ 认证彩照：<input name='faceurl' type='text' id='faceurl' size='35' class='intxt' style='width:250px' value='<?php echo $shiming; ?>'/>
+ <input name="shiming" type="file" id="shiming" size="45" />
+ <a href="edit_shiming.php?dopost=delold&oldshiming=<?php echo urlencode($shiming); ?>">[删除]</a>
+</p>
+<p class="cellBg">
+  身份证号：<input name='shenfenzheng' type='text' id='shenfenzheng' class='intxt' value='<?php echo $shenfenzheng?>'/>
+</p>
+<p>
+  真实姓名：<input name='xingming' type='text' id='xingming' class='intxt' value='<?php echo $xingming?>'/>
+</p>          
+          <p>
+            <button class="button2" type="submit">提交</button>
+          </p>
+    </div>
+    <?php } ?>
+ </div>
+</form>
+      <!--主操作区域 -->
+    </div>
+  </div>
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</div>
+</body>
+</html>

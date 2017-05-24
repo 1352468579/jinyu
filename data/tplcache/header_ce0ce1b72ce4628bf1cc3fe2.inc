@@ -1,0 +1,287 @@
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title><?php echo $GLOBALS['_vars']['spacename'];  echo $GLOBALS['_vars']['curtitle']; ?></title>
+<meta name="author" content="<?php echo $GLOBALS['_vars']['uname']; ?>"/>
+<link href="space/person/blue/style.css" rel="stylesheet" type="text/css" />
+<link href="/images/css/conn.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+
+
+<?php
+//未登录显示的head
+if(!$cfg_ml->IsLogin()) {
+?>
+	<div class="header">
+        
+        <div class="top_text">
+        	<div class="w1150">
+                <div class="fl">欢迎访问金玉良缘婚恋网！ 服务时间（无假日）09:30-17:30</div>
+                <div class="fr"><a href="/member/">登录</a> <i>|</i> <a href="<?php echo $GLOBALS['cfg_memberurl']; ?>/index_do.php?fmdo=user&dopost=regnew">注册</a> <i>|</i> <a href="http://m.jylyhl.com" target="_blank"><em class="ico_phone"></em>移动版</a> <i>|</i> <a href="javascript:;" onclick="cdpopuptrigger(1)"><em class="ico_wechat"></em>关注微信</a> <i>|</i> <a href="/call.html" target="_blank">在线咨询</a></div>
+            </div>
+            
+            <div class="cd-popup tanchu1">
+                <div class="cd-popup-container">
+                    <p>关注金玉良缘公众号</p>
+                    <div class="clear"></div>
+                    <div class="cd-buttons">
+                        <img src="/images/ewm.jpg" width="200" alt="金玉良缘网微信二维码" /><br />微信扫一扫，关注领取红包！
+                    </div>
+                    <a href="javascript:;" onclick="cdpopupclose(1)" class="cd-popup-close">close</a>
+                </div>
+            </div>
+
+			<script type="text/javascript">
+                function cdpopuptrigger(ids){
+						$('.tanchu'+ids).addClass('is-visible');
+				}
+				
+				function cdpopupclose(ids){	
+							$('.tanchu'+ids).removeClass('is-visible');
+				}
+			</script>
+
+			<script>
+              $(function(){
+                $('.city').click(function(){
+				 	$('.search_form_suggest').slideToggle();
+				});
+              })
+            </script>
+        </div>
+        
+        <div class="clear"></div>
+    
+    	<div class="w1150">
+            <div class="logo">
+            	<h2><a href="/">金玉良缘网</a></h2>
+                <div class="city">
+                    <span class="key_word">北京</span>
+                    <a class="fr ico btn_search" href="javascript:void(0)"></a>
+
+                    <div class="search_form_suggest" style="display:none">
+                      <h3><a class="ico btn_close fr" item="close">关闭</a>选择所在地区</h3>
+                      
+                      <div class="clear"></div>
+                      
+                      <div class="thLeft thPadT5 tab_select">
+                        <dl class="clrfix">
+                          <dt>直辖市</dt>
+                          <dd class="clr_after">
+                            <a href="/index.php?city=bj">北京</a>
+                            <a href="/index.php?city=tj">天津</a>
+                            <a href="/index.php?city=sh">上海</a>
+                            <a href="/index.php?city=cq">重庆</a>
+                          </dd>
+                        </dl>
+                        <dl class="clrfix">
+                          <dt>自治区</dt>
+                          <dd class="clr_after">
+                            <a href="/index.php?city=nm">内蒙</a>
+                            <a href="/index.php?city=nx">宁夏</a>
+                            <a href="/index.php?city=gx">广西</a>
+                            <a href="/index.php?city=xz">西藏</a>
+                            <a href="/index.php?city=xj">新疆</a>
+                          </dd>
+                        </dl>
+                        <dl class="clrfix">
+                          <dt>省份</dt>
+                          <dd class="clr_after">
+                            <a href="/index.php?city=sc">四川</a>
+                            <a href="/index.php?city=ln">辽宁</a>
+                            <a href="/index.php?city=js">江苏</a>
+                            <a href="/index.php?city=hb">湖北</a>
+                            <a href="/index.php?city=sx">陕西</a>
+                            <a href="/index.php?city=gd">广东</a>
+                            <a href="/index.php?city=hb">河北</a>
+                            <div class="clear"></div>
+                            <a href="/index.php?city=sx">山西</a>
+                            <a href="/index.php?city=hn">河南</a>
+                            <a href="/index.php?city=jl">吉林</a>
+                            <a href="/index.php?city=hlj">黑龙江</a>
+                            <a href="/index.php?city=sd">山东</a>
+                            <a href="/index.php?city=ah">安徽</a>
+                            <a href="/index.php?city=zj">浙江</a>
+                              <div class="clear"></div>
+                            <a href="/index.php?city=fj">福建</a>
+                            <a href="/index.php?city=hn">湖南</a>
+                            <a href="/index.php?city=jx">江西</a>
+                            <a href="/index.php?city=gz">贵州</a>
+                            <a href="/index.php?city=yn">云南</a>
+                            <a href="/index.php?city=gs">甘肃</a>
+                            <a href="/index.php?city=qh">青海</a>
+                            <a href="/index.php?city=hn">海南</a>
+                          </dd>
+                        </dl>
+                      </div>  
+                    </div><!--search_form_suggest-->
+
+                </div><!--city-->
+                
+            </div>            
+            <div class="main2">
+            	<ul>
+                	<li><a href="/">首页</a></li>
+                	<li><a href="/a/hongniang/">红娘服务</a></li>
+                	<li><a href="/a/ketang/">婚恋课堂</a></li>
+                	<li><a href="/a/mendian/">直营门店</a></li>
+                	<li><a href="/a/huodong/">相亲活动</a></li>
+                	<li><a href="/a/about/">关于我们</a></li>
+                	<li><a href="/plus/list.php?tid=10">微圈子</a></li>
+                	<li><a href="/a/chuanmei/">金玉传媒<i class="main-new"></i></a></li>
+                	<li><a href="http://www.ailianlove.com/" target="_blank">情感专家<i class="main-hot"></i></a></li>
+                </ul>
+            </div>
+            <div class="call">红娘热线：028-86145520</div>
+        </div>
+    </div>
+<?php
+}
+//登录后显示的head
+else {
+?>
+
+
+	<div class="header">
+        
+        <div class="top_text">
+        	<div class="w1150">
+                <div class="fl">欢迎访问金玉良缘婚恋网！ 服务时间（无假日）09:30-17:30</div>
+                <div class="fr"><a href="/member/"><?php echo $cfg_ml->M_UserName?></a> <i>|</i> <?php
+       $pms = $dsql->GetOne("SELECT COUNT(*) AS nums FROM #@__member_pms WHERE toid='{$cfg_ml->M_ID}' AND `hasview`=0 AND folder = 'inbox'");
+		if($pms['nums'] > 0)
+		{
+			echo "<a href='/member/pm.php'>私信[{$pms['nums']}]</a>";
+		}
+		elseif($pms['nums']==0)
+		{
+			echo "<a href='/member/pm.php'>私信[0]</a>";
+		}
+       ?>
+ <i>|</i> <a href="../member/index_do.php?fmdo=login&dopost=exit#">退出</a>  <i>|</i> <a href="http://m.jylyhl.com" target="_blank"><em class="ico_phone"></em>移动版</a> <i>|</i> <a href="javascript:;" onclick="cdpopuptrigger(1)"><em class="ico_wechat"></em>关注微信</a> <i>|</i> <a href="/call.html" target="_blank">在线咨询</a></div>
+            </div>
+            
+            <div class="cd-popup tanchu1">
+                <div class="cd-popup-container">
+                    <p>关注金玉良缘公众号</p>
+                    <div class="clear"></div>
+                    <div class="cd-buttons">
+                        <img src="/images/ewm.jpg" width="200" alt="金玉良缘网微信二维码" /><br />微信扫一扫，关注领取红包！
+                    </div>
+                    <a href="javascript:;" onclick="cdpopupclose(1)" class="cd-popup-close">close</a>
+                </div>
+            </div>
+
+			<script type="text/javascript">
+                function cdpopuptrigger(ids){
+						$('.tanchu'+ids).addClass('is-visible');
+				}
+				
+				function cdpopupclose(ids){	
+							$('.tanchu'+ids).removeClass('is-visible');
+				}
+			</script>
+			<script>
+              $(function(){
+                $('.city').click(function(){
+				 	$('.search_form_suggest').slideToggle();
+				});
+              })
+            </script>
+        </div>
+        
+        <div class="clear"></div>
+    
+    	<div class="w1150">
+            <div class="logo">
+            	<h2><a href="/">金玉良缘网</a></h2>
+                <div class="city">
+                    <span class="key_word">北京</span>
+                    <a class="fr ico btn_search" href="javascript:void(0)"></a>
+
+                    <div class="search_form_suggest" style="display:none">
+                      <h3><a class="ico btn_close fr" item="close">关闭</a>选择所在地区</h3>
+                      
+                      <div class="clear"></div>
+                      
+                      <div class="thLeft thPadT5 tab_select">
+                        <dl class="clrfix">
+                          <dt>直辖市</dt>
+                          <dd class="clr_after">
+                            <a href="/index.php?city=bj">北京</a>
+                            <a href="/index.php?city=tj">天津</a>
+                            <a href="/index.php?city=sh">上海</a>
+                            <a href="/index.php?city=cq">重庆</a>
+                          </dd>
+                        </dl>
+                        <dl class="clrfix">
+                          <dt>自治区</dt>
+                          <dd class="clr_after">
+                            <a href="/index.php?city=nm">内蒙</a>
+                            <a href="/index.php?city=nx">宁夏</a>
+                            <a href="/index.php?city=gx">广西</a>
+                            <a href="/index.php?city=xz">西藏</a>
+                            <a href="/index.php?city=xj">新疆</a>
+                          </dd>
+                        </dl>
+                        <dl class="clrfix">
+                          <dt>省份</dt>
+                          <dd class="clr_after">
+                            <a href="/index.php?city=sc">四川</a>
+                            <a href="/index.php?city=ln">辽宁</a>
+                            <a href="/index.php?city=js">江苏</a>
+                            <a href="/index.php?city=hb">湖北</a>
+                            <a href="/index.php?city=sx">陕西</a>
+                            <a href="/index.php?city=gd">广东</a>
+                            <a href="/index.php?city=hb">河北</a>
+                            <div class="clear"></div>
+                            <a href="/index.php?city=sx">山西</a>
+                            <a href="/index.php?city=hn">河南</a>
+                            <a href="/index.php?city=jl">吉林</a>
+                            <a href="/index.php?city=hlj">黑龙江</a>
+                            <a href="/index.php?city=sd">山东</a>
+                            <a href="/index.php?city=ah">安徽</a>
+                            <a href="/index.php?city=zj">浙江</a>
+                              <div class="clear"></div>
+                            <a href="/index.php?city=fj">福建</a>
+                            <a href="/index.php?city=hn">湖南</a>
+                            <a href="/index.php?city=jx">江西</a>
+                            <a href="/index.php?city=gz">贵州</a>
+                            <a href="/index.php?city=yn">云南</a>
+                            <a href="/index.php?city=gs">甘肃</a>
+                            <a href="/index.php?city=qh">青海</a>
+                            <a href="/index.php?city=hn">海南</a>
+                          </dd>
+                        </dl>
+                      </div>  
+                    </div><!--search_form_suggest-->
+
+                </div><!--city-->
+                
+            </div>            
+            <div class="main2">
+            	<ul>
+                	<li><a href="/">首页</a></li>
+                	<li><a href="/a/hongniang/">红娘服务</a></li>
+                	<li><a href="/a/ketang/">婚恋课堂</a></li>
+                	<li><a href="/a/mendian/">直营门店</a></li>
+                	<li><a href="/a/huodong/">相亲活动</a></li>
+                	<li><a href="/a/about/">关于我们</a></li>
+                	<li><a href="/plus/list.php?tid=10">微圈子</a></li>
+                	<li><a href="/a/chuanmei/">金玉传媒<i class="main-new"></i></a></li>
+                	<li><a href="http://www.ailianlove.com/" target="_blank">情感专家<i class="main-hot"></i></a></li>
+                </ul>
+            </div>
+            <div class="call">红娘热线：028-86145520</div>
+        </div>
+    </div>
+
+<?php
+}
+?>

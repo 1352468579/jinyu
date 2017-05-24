@@ -1,0 +1,1 @@
+<li><a href="/member/index.php?uid=[field:userid/]" class="hd_bm_list_img"><img src="[field:face/]" alt="[field:uname/]" /></a><a href="/member/index.php?uid=[field:userid/]" class="hd_bm_list_name">[field:uname/]</a><p><span>[field:birthday/]岁 | [field:height/]CM | [field:city/]</span><br /><b>希望找到一个可以带我到世界某个角落欣赏着日出日落的人</b></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>

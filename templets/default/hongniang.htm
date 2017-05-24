@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘红娘</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+
+	<div class="list_banner hnb"></div>
+    
+    <div class="clear"></div>
+    
+    <div class="hongniang">
+    	<div class="w1150">
+        	<div class="hn_img"><img src="/images/hn_03.jpg" /></div>
+        	<div class="hn_text">
+                <h1>金玉良缘全国红娘团队</h1>
+                <div class="hn_info">
+                	<p>金玉良缘高端红娘团队，拥有全国一流的专业资深红娘，数百位十年以上经验的红娘，成功牵手的案例数千对。</p>
+                    <p><b>服务星级：</b><i></i></p>
+                    <p><b>服务理念：</b><br />金玉良缘高端红娘团队，拥有全国一流的专业资深红娘，数百位十年以上经验的红娘，成功牵手的案例数千对。金玉良缘高端红娘团队，拥有全国一流的专业资深红娘，数百位十年以上经验的红娘，成功牵手的案例数千对。金玉良缘高端红娘团队，拥有全国一流的专业资深红娘，数百位十年以上经验的红娘，成功牵手的案例数千对。</p>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="hn_list">
+            	<ul>
+                
+                	{dede:list pagesize='30' addfields='jingyan,zhiwei,linian,jieshao,haoping,anli' channelid='17'}
+                    
+                	<li><div class="hn_list_img"><a href="javascript:;" onclick="cdpopuptrigger([field:id/])"><img src="[field:litpic/]" alt="[field:title/]" /><p class="hn_list_p"><b>[field:title/]</b><br />[field:zhiwei/]/[field:jingyan/]经验</p></a><a href="/call.html" target="_blank" class="hn_zxbtn" title="在线咨询红娘">咨询红娘</a></div>
+                    <div class="cd-popup2 tanchu[field:id/]">
+                        <div class="cd-popup-container2">
+                            <div class="cd-buttons2">
+                                <div class="tc_img">
+                                    <div class="hn_list_img2"><img src="[field:litpic/]" alt="[field:title/]" /></div>
+                                    <b>[field:title/]</b><br /><span>[field:zhiwei/]/[field:jingyan/]经验</span>
+                                    <div class="tc_zx"><a href="[field:arcurl/]" target="_blank">查看详情</a><a href="/call.html" target="_blank" class="hover">在线咨询</a></div>
+                                </div>
+                                <div class="tc_text">
+                                    <p><b>好评率：[field:haoping/] 成功案例：[field:anli/]</b>[field:jieshao/]</p>
+                                    <p><b>服务理念</b>[field:linian/]</p>
+                                </div>
+                            </div>
+                            <a href="javascript:;" onclick="cdpopupclose([field:id/])" class="cd-popup-close2">close</a>
+                        </div>
+                    </div>
+                    </li>
+                    
+                    {/dede:list}
+
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+</body>
+</html>

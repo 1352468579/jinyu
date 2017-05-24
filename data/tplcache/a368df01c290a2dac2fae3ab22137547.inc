@@ -1,0 +1,1 @@
+<a href="[field:spaceurl /]" class="writer_face"><img src="[field:face/]" alt="[field:uname/]" height="75" width="75"/><b></b></a>

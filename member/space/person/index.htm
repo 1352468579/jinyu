@@ -1,0 +1,242 @@
+{dede:include file='header.htm'/}
+
+<body style=" background:rgba(246,244,245,.84);">
+	<div class="w1050 mt15">
+    	
+        <div class="member">
+        	<div class="member_img">{dede:if $_vars['face']=='' } <img src="space/person/common/images/noavatar.gif" alt="<?php echo $row['uname']; ?>还没设置头像" /> {else} <img src="{dede:var.face/}" alt="{dede:var.uname/}的头像" /> {/dede:if}</div>
+            <div class="member_info">
+            	<h1>{dede:var.uname /}</h1>
+                <span>会员等级：{dede:var.membername/} 空间访问：{dede:var.homecount/}</span>
+                <div class="member_info_p">
+                	<p><i>身高：</i><?php echo $row['height']; ?> 厘米</p>
+                	<p><i>体重：</i><?php echo GetEnumsValue('bodytype',$row['bodytype']); ?></p>
+                	<p><i>年龄：</i><?php echo $row['birthday']; ?></p>
+                	<p><i>现居城市：</i><?php echo $row['city'];?></p>
+                	<p><i>星座：</i><?php echo GetEnumsValue('star',$row['star']); ?></p>
+                	<p><i>血型：</i><?php echo GetEnumsValue('blood',$row['blood']); ?></p>
+                	<p><i>婚姻状况：</i><?php echo GetEnumsValue('marital',$row['marital']); ?></p>
+                	<p><i>交友目的：</i><?php echo GetEnumsValue('datingtype',$row['datingtype']); ?></p>
+                	<p><i>住房情况：</i><?php echo GetEnumsValue('house',$row['house']); ?></p>
+                </div>
+                
+                <div class="member_info_zx">
+                    <a href="pm.php?dopost=send&uid={dede:var.userid/}">发私信</a><a href="index.php?action=newfriend&uid={dede:var.userid/}">关注他</a><a href="javascript:;">送礼物</a><a href="index.php?action=blackfriend&uid={dede:var.userid/}">留言</a>
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+            
+        <div class="clear"></div>
+        
+        <div class="member2">
+            <div class="member_left">
+                <div class="member_desc">
+                    <i class="member_desc-yinhao1"></i>
+                    <p>{dede:var.msg /}</p>
+                    <i class="member_desc-yinhao2"></i>
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico1"></i>详细资料</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>收入情况：</i><?php echo GetEnumsValue('income',$row['income']); ?></p>
+                        <p><i>教育程度：</i><?php echo GetEnumsValue('education',$row['education']); ?></p>
+                        <p><i>所属行业：</i><?php echo GetEnumsValue('vocation',$row['vocation']); ?></p>
+                        <p><i>是否吸烟：</i><?php echo GetEnumsValue('smoke',$row['smoke']); ?></p>
+                        <p><i>是否饮酒：</i><?php echo GetEnumsValue('drink',$row['drink']); ?></p>
+                        <p><i>购车情况：</i><?php echo GetEnumsValue('car',$row['car']); ?></p>
+                        <p><i>有无子女：</i><?php echo GetEnumsValue('zinv',$row['zinv']); ?></p>
+                        <p><i>锻炼习惯：</i><?php echo GetEnumsValue('duanlian',$row['duanlian']); ?></p>
+                        <p><i>作息习惯：</i><?php echo GetEnumsValue('zuoxi',$row['zuoxi']); ?></p>
+                        <p><i>宗教信仰：</i><?php echo GetEnumsValue('zongjiao',$row['zongjiao']); ?></p>
+                    </div>
+                </div>
+            
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico2"></i>工作学习</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>职业职位：</i><?php echo GetEnumsValue('zhiye',$row['zhiye']); ?></p>
+                        <p><i>公司行业：</i><?php echo GetEnumsValue('hangye',$row['hangye']); ?></p>
+                        <p><i>工作状态：</i><?php echo GetEnumsValue('gouwu',$row['leixing']); ?></p>
+                        <p><i>外债贷款：</i>
+                        <?php
+                        if($row['waizhai']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='waizhai' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['waizhai'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        
+                        </p>
+                        <p><i>家务情况：</i><?php echo GetEnumsValue('jiawu',$row['jiawu']); ?></p>
+                        <p><i>宠物：</i><?php echo GetEnumsValue('chongwu',$row['chongwu']); ?></p>
+                        <p><i>饮食习惯：</i><?php echo GetEnumsValue('yinshi',$row['yinshi']); ?></p>
+                        <p><i>逛街购物：</i><?php echo GetEnumsValue('gouwu',$row['gouwu']); ?></p>
+                        <p><i>交际圈子：</i><?php echo GetEnumsValue('quanzi',$row['quanzi']); ?></p>
+                        <p><i>最大消费：</i><?php echo GetEnumsValue('xiaofei',$row['xiaofei']); ?></p>
+                    </div>
+                </div>
+            
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico3"></i>兴趣爱好</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>是否要小孩：</i><?php echo GetEnumsValue('xiaohai',$row['xiaohai']); ?></p>
+                        <p><i>何时结婚：</i><?php echo GetEnumsValue('jiehun',$row['jiehun']); ?></p>
+                        <p><i>异地恋：</i><?php echo GetEnumsValue('yidilian',$row['yidilian']); ?></p>
+                        <p><i>家中排行：</i><?php echo GetEnumsValue('paihang',$row['paihang']); ?></p>
+                        <p><i>父母情况：</i><?php echo GetEnumsValue('fumu',$row['fumu']); ?></p>
+                        <div><i>业余爱好：</i>
+                        <?php
+                        if($row['aihao']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='aihao' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['aihao'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        </div>
+                        <div><i>喜欢的运动：</i>
+                        <?php
+                        if($row['yundong']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='yundong' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['yundong'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        </div>
+                        <div><i>喜欢的食物：</i>
+                        <?php
+                        if($row['food']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='food' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['food'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        </div>
+                        <div><i>喜欢的书籍：</i>
+                        <?php
+                        if($row['book']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='book' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['book'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        
+                        </div>
+                        <div><i>喜欢的电影：</i>
+                        <?php
+                        if($row['diany']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='diany' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['diany'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        </div>
+                        <div><i>娱乐休闲：</i>
+                        <?php
+                        if($row['xiuxian']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='xiuxian' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['xiuxian'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        </div>
+                        <div><i>旅游去处：</i>
+                        <?php
+                        if($row['lvyou']==''){
+                        	echo "保密";
+                        }else{
+                            $arr = $dsql->GetOne("Select * From `#@__sys_set` where sname='lvyou' ");
+                            $sets = explode(',',$arr['items']);
+                            foreach($sets as $v){
+                                if(preg_match("#".$v."#", $row['lvyou'])) echo "  $v ";
+                            }
+                        }
+                        ?>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="member_right">
+            	<div class="member_right_vip">
+                    <dl class="dl_3">
+                        <dt>  
+                          <h3>VIP会员</h3>
+                          <p class="p_1">有效时间：180天</p>
+                          <p class="p_2">￥0.11元/天</p>
+                          <p class="p_3">会员价￥20</p>
+                        </dt>
+                        <dd><span>立即开通</span></dd>
+                    </dl>                
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="member_right_a">
+                	<a href=""><img src="/images/righta.jpg" /></a>
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="hd_hy_list">
+                    <h3>优质会员</h3>
+                    <ul>
+                    	<?php 
+                        	$sql="select m.mid,m.userid,m.uname,m.sex,m.face,p.birthday,p.city,p.height from dede_member as m left join dede_member_person p on m.mid=p.mid where m.uname!='' and p.birthday!='' and p.city!='' and m.face!='' and p.height!='' ORDER BY rand() DESC LIMIT 0,5";
+                            $res=mysql_query($sql);
+                            while($rows=mysql_fetch_array($res)){
+                        ?>
+                        <li><a href="/member/index.php?uid=<?php echo $rows[userid] ?>" class="hd_bm_list_img"><img src="<?php echo $rows[face] ?>" alt="<?php echo $rows[uname] ?>" /></a><a href="/member/index.php?uid=<?php echo $rows[userid] ?>" class="hd_bm_list_name"><?php echo $rows[uname] ?></a><p><span><?php echo $rows[birthday] ?>岁 | <?php echo $rows[height] ?>CM | <?php echo $rows[city] ?></span></p><p><a href="/member/pm.php?dopost=send&uid=<?php echo $rows[userid] ?>">打招呼</a><a href="/member/index.php?action=newfriend&uid=<?php echo $rows[userid] ?>">关注他</a></p></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+<div class="clear"></div>
+{dede:include file='footer.htm'/}
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+#main{width:100%; min-height:400px; margin:30px auto 0 auto; border:1px solid #d3d3d3; background:#fff; -moz-border-radius:5px;-khtml-border-radius: 5px;-webkit-border-radius: 5px; border-radius:5px;}
+
+
+
+
+@media screen and (min-width: 320px) and (max-width : 480px) {
+ html{-webkit-text-size-adjust: none;}
+ #header{width:100%}
+ #main{width:100%; margin:10px auto;  -moz-border-radius:0px;-khtml-border-radius: 0px;-webkit-border-radius: 0px; border-radius:0px;}
+ .demo_topad{display:none}
+ .google_ad{width:100%; margin:40px auto; text-align:center}
+.ad_76090,.ad_demo{width:100%; height:auto; margin:40px auto;text-align:center}
+.demo{width:98%; margin:10px auto}
+}

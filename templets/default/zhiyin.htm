@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>直营门店</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script src="/images/js/jquery.easing.min.js"></script>
+<script src="/images/js/jquery.scrollify.min.js"></script>
+<script>
+$(function() {
+	$('.panel').css({'height': $(window).height()});
+	$.scrollify({
+		section: '.panel'
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div class="panel" style="background:url(/images/mendian1.jpg) center no-repeat;">
+
+    {dede:include filename="header.htm"/}    
+    
+    <div class="mendian1">
+    	<div class="w1150">
+            <h2>成都天府广场旗舰店</h2>
+            <div class="mendian_img"><a href="/a/zhiyin/cd"><img src="/images/mendian1-1.png" width="300" alt="金玉良缘成都天府旗舰店" /></a></div>
+            <div class="mendian_info">
+            <p>婚姻热线：028-86145520</p>
+            <p>营业时间：09：30-18：00（节假日正常上班）</p>
+            <p>联系地址：成都市青羊区西御街西御大厦A座25楼金玉良缘</p>
+            <div class="clear"></div>
+            <a href="/call.html" target="_blank"><img src="/images/mendianbtn.png" alt="在线咨询" /></a><a href="/a/zhiyin/cd"><img src="/images/mendianbtn2.png" alt="查看详情" /></a>
+            </div>
+            <div id="down">
+                <canvas id="downCanvas" width="50" height="50"></canvas>
+            </div>
+ 
+         </div>
+    </div>
+    
+</div>
+
+<div class="panel" style="background:url(/images/mendian2.jpg) center no-repeat;">
+    <div class="mendian2">
+    	<div class="w1150">
+            <h2>成都温哥华广场店</h2>
+            <div class="mendian2_img"><a href="/a/zhiyin/wgh"><img src="/images/mendian3-1.png" width="300" alt="成都温哥华广场店" /></a></div>
+            <div class="mendian2_info">
+            <p>婚姻热线：028-62634618</p>
+            <p>营业时间：09：30-18：00（节假日正常上班）</p>
+            <p>联系地址：成都市青羊区清江东路1号温哥华广场30楼</p>
+            <div class="clear"></div>
+            <a href="/call.html" target="_blank"><img src="/images/mendianbtn.png" alt="在线咨询" /></a><a href="/a/zhiyin/wgh"><img src="/images/mendianbtn2.png" alt="查看详情" /></a>
+            </div>
+            
+            <div id="down2">
+                <canvas id="downCanvas2" width="50" height="50">你的浏览器不支持canvas，请下载更新版本的浏览器</canvas>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="panel" style="background:url(/images/mendian3.jpg) center no-repeat;">
+    <div class="mendian2">
+    	<div class="w1150">
+            <h2>绵阳万达广场店</h2>
+            <div class="mendian2_img"><a href="/a/zhiyin/my"><img src="/images/mendian2-1.png" width="300" alt="绵阳万达广场店" /></a></div>
+            <div class="mendian2_info">
+            <p>婚姻热线：0816-6399491</p>
+            <p>营业时间：09：30-18：00（节假日正常上班）</p>
+            <p>联系地址：绵阳市培城区花园路万达广场写字楼一单元17楼</p>
+            <div class="clear"></div>
+            <a href="/call.html" target="_blank"><img src="/images/mendianbtn.png" alt="在线咨询" /></a><a href="/a/zhiyin/my"><img src="/images/mendianbtn2.png" alt="查看详情" /></a>
+            </div>
+            
+            <div id="down3">
+                <canvas id="downCanvas3" width="50" height="50">你的浏览器不支持canvas，请下载更新版本的浏览器</canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel" style="background:url(/images/mendian4.jpg) center no-repeat;">
+	<div class="mendian_new">更多新店筹备中。。。</div>
+</div>
+
+
+<script>
+$("#downCanvas").click(function(){
+    var t = $(window).scrollTop();
+	var height=$(window).height();
+    $('body,html').animate({'scrollTop':t+height},400)
+})
+
+function drawDown() {
+        var c = document.getElementById("downCanvas"),
+		cxt = c.getContext("2d");
+        cxt.beginPath();
+        cxt.moveTo(5, 20);
+        cxt.lineTo(25, 45);
+        cxt.lineTo(45, 20);
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "white";
+        cxt.lineCap = 'round';
+        cxt.lineJoin = "round";
+        cxt.stroke();
+        cxt.moveTo(5, 5);
+        cxt.lineTo(25, 30);
+        cxt.lineTo(45, 5);
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "white";
+        cxt.lineCap = 'round';
+        cxt.lineJoin = "round";
+        cxt.stroke();
+    }
+    drawDown()
+$("#downCanvas2").click(function(){
+    var t = $(window).scrollTop();
+	var height=$(window).height();
+    $('body,html').animate({'scrollTop':t+height},400)
+})
+
+$("#downCanvas3").click(function(){
+    var t = $(window).scrollTop();
+	var height=$(window).height();
+    $('body,html').animate({'scrollTop':t+height},400)
+})
+
+function drawDown2() {
+        var c = document.getElementById("downCanvas2"),
+		cxt = c.getContext("2d");
+        cxt.beginPath();
+        cxt.moveTo(5, 20);
+        cxt.lineTo(25, 45);
+        cxt.lineTo(45, 20);
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "white";
+        cxt.lineCap = 'round';
+        cxt.lineJoin = "round";
+        cxt.stroke();
+        cxt.moveTo(5, 5);
+        cxt.lineTo(25, 30);
+        cxt.lineTo(45, 5);
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "white";
+        cxt.lineCap = 'round';
+        cxt.lineJoin = "round";
+        cxt.stroke();
+    }
+    drawDown2()
+function drawDown3() {
+        var c = document.getElementById("downCanvas3"),
+		cxt = c.getContext("2d");
+        cxt.beginPath();
+        cxt.moveTo(5, 20);
+        cxt.lineTo(25, 45);
+        cxt.lineTo(45, 20);
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "white";
+        cxt.lineCap = 'round';
+        cxt.lineJoin = "round";
+        cxt.stroke();
+        cxt.moveTo(5, 5);
+        cxt.lineTo(25, 30);
+        cxt.lineTo(45, 5);
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "white";
+        cxt.lineCap = 'round';
+        cxt.lineJoin = "round";
+        cxt.stroke();
+    }
+    drawDown3()
+</script>
+
+
+<div class="panel">
+{dede:include filename="footer.htm"/}
+</div>
+
+
+</body>
+</html>

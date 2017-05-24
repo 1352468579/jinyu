@@ -1,0 +1,53 @@
+		<script type="text/javascript" src="/images/js/pubu.js"></script>
+        <script>
+            $(function(){
+                $('#brand-waterfall').waterfall();
+            });
+        </script>
+        <div class="xiuenai_right">
+        
+            <div class="brand-list">
+            	<div class="brand-bd cle" id="brand-waterfall">
+                      {dede:arclist titlelen=100 row=15 typeid='10' addfields='imgss,say' channelid='19'}
+                      <div class="item" id="brand-[field:global.autoindex/]" style="width:173px;">
+                          <div class="lover_img">
+						<script type="text/javascript">
+                            var yourString="[field:imgss /]";
+                            var result=yourString.split("|");
+                            document.write("<a href='/plus/view.php?aid=[field:id/]'><img src='/uploads/weiquanzi/"+result[0]+"' width='173' style='min-height:200px;max-height:600px;'/></a>");
+                        </script>
+                          </div>
+                          <div class="clear"></div>
+                          <div class="lover_tx">
+                              <a href="/member/index.php?uid=[field:writer /]" target="_blank">
+                          	[field:mid runphp='yes']
+                            	$name=@me;
+                                $sql="select * from dede_member where mid =$name";
+                                $query = mysql_query($sql);
+                                $row = mysql_fetch_array($query);
+                                if($row['face'] == ''){
+                                    @me = '<img src="/member/templets/images/dfboy.png" width="35" />'; 
+                                }else{ 
+                                    $face = $row['face']; @me = '<img src="'.$face.'" width="35" height="35" />'; 
+                                }
+                            [/field:mid]
+                              </a>
+                          </div>
+                          <div class="lover_title" style=" width:100px;">[field:say /]</div>
+                      </div><!--item-->
+                      {/dede:arclist}
+                 </div><!--brand-bd cle-->
+            </div><!--brand-list-->
+           
+			<script type="text/javascript">
+            jQuery(document).ready(function(){
+                $('.lover_img img').each(function(){ //jquery.each()循环读取所有图片
+                    var height = $(this).height();
+                    var width = $(this).width();
+                       $(this).css('height',height+'px');
+                });
+            });
+            </script>
+        
+        </div>
+    </div>

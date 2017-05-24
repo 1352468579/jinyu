@@ -1,0 +1,1 @@
+·<a href='/member/index.php?uid=[field:userid/]' target='_blank'>[field:userid/]</a> 昵称：[field:uname/] </a><br><br>

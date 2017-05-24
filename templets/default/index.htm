@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘首页</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/index.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/select.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/images/js/jquery.SuperSlide2.js"></script>
+<script type="text/javascript" src="/images/js/jquery.easydropdown.js"></script>
+</head>
+
+<body>
+
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+    
+    <div class="w1150">
+        
+        <div id="checkinfos">
+        
+        <div class="indexreg">
+            <div class="checkreg"><i class="hover" id="two1" onmouseover="setContentTab('two',1,2)">登陆</i><i id="two2" onmouseover="setContentTab('two',2,2)">注册</i></div>
+            <div class="clear"></div>
+            
+            <div class="pd15" id="con_two_1">
+                <div class="reginfo">立即登陆 寻找缘分</div>
+                <div class="userpass">
+                
+                    <form name='form1' method='POST' action='/member/index_do.php'>
+                      <input type="hidden" name="fmdo" value="login">
+                      <input type="hidden" name="dopost" value="login">
+                      <input type="hidden" name="gourl" value="/member/">
+                      <input type="hidden" value="2592000" checked="checked" name="keeptime" id="ra1"/>
+                        <p><b>账 &nbsp; 号</b><input type="text" id="txtPassword" name="userid" class="textreg" onkeyup="STip(this.value, event);" value="手机号/邮箱" onFocus="if(this.value=='手机号/邮箱'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='手机号/邮箱'"  /></p>
+                        
+                        <p><b>密 &nbsp; 码</b><input id="txtPassword" type="text" name="pwd" class="textreg" value="密码" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';}"/></p>
+                        <p><b>验证码</b><input id="vdcode" type="text" style="width:60px; height:20px; text-transform: uppercase;" name="vdcode"/> <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/></p>
+                        <button id="btnSignCheck" type="submit" class="submit" />马上登陆</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pd15 dinone" id="con_two_2">
+                <div class="reginfo">注册一秒 幸福一生</div>
+                
+                <div class="userpass">
+                    <form method="post" action="/member/reg_new2.php" id="regUser" name="form2">
+                        <input type="hidden" value="regbase" name="dopost"/>
+                        <input type="hidden" value="1" name="step"/>
+                        <input type="hidden" value="个人" name="mtype"/>
+                        
+                        <p><b>账 &nbsp; 号</b><input type="text" id="txtUsername" name="userid" class="textreg" onkeyup="STip(this.value, event);" value="手机号/邮箱" onFocus="if(this.value=='手机号/邮箱'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='手机号/邮箱'" onchange="changeum(this.value)"  /></p>
+                        
+                        <input type="hidden" id="uname" name="uname"/>
+                        
+                        <p><b>密 &nbsp; 码</b><input type="text" id="txtPassword" name="userpwd" class="textreg" value="密码6位以上" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';}"/></p>
+                        
+                        <p><b>验证码</b><input id="vdcode" type="text" style="width:60px; height:20px; text-transform: uppercase;" name="vdcode"/> <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/></p>
+                        
+                        <input type="submit" name="submit" value="免费注册" class="submit" />
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+        </div>
+    
+    	<script language="javascript" type="text/javascript">  
+		function changeum(vas){
+			var vas=vas;
+			document.getElementById("uname").value=vas;
+		}
+			function checkinfos(){
+		      var taget_obj = document.getElementById('checkinfos');   
+		      myajax = new DedeAjax(taget_obj,false,false,'','','');   
+		      myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_checkinfos.php");   
+		      DedeXHTTP = null;
+			}
+			checkinfos();
+		</script>
+        
+    </div>
+    
+	<script type="text/javascript">
+		function setContentTab(name, curr, n) {
+			for (i = 1; i <= n; i++) {
+				var menu = document.getElementById(name + i);
+				var cont = document.getElementById("con_" + name + "_" + i);
+				menu.className = i == curr ? "hover" : "";
+				if (i == curr) {
+					cont.style.display = "block";
+				} else {
+					cont.style.display = "none";
+				}
+			}
+		}
+    </script>
+    
+    <div class="flexslider" id="banner_tabs">
+    	
+        <ul class="slides">
+            <li><a href="#" style="background: url(/images/indexbanner.jpg) no-repeat center;"></a></li>
+            <li><a href="#" style="background: url(/images/indexbanner.jpg) no-repeat center;"></a></li>
+            <li><a href="#" style="background: url(/images/indexbanner.jpg) no-repeat center;"></a></li>
+        </ul>
+        
+        <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+            <li class="active"><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>3</a></li>
+        </ol>
+
+		<script type="text/javascript" src="/images/js/slider.js"></script>
+		<script type="text/javascript">
+        $(function() {
+            var bannerSlider = new Slider($('#banner_tabs'), {
+                time: 5000,
+                delay: 400,
+                event: 'hover',
+                auto: true,
+                mode: 'fade',
+                controller: $('#bannerCtrl'),
+                activeControllerCls: 'active'
+            });
+            $('#banner_tabs .flex-prev').click(function() {
+                bannerSlider.prev()
+            });
+            $('#banner_tabs .flex-next').click(function() {
+                bannerSlider.next()
+            });
+        })
+        </script>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="bgclor1">
+    
+    <div class="w1150">
+        <div class="partTit">
+            <p>
+                <span class="titspan1">
+                    <em class="ft31">时光正好 我们恋爱吧</em>
+                    <i class="eng">2000万注册会员，给您万里挑一的机会</i>
+                </span>
+            </p>
+        </div>
+    	<div class="clear"></div>
+<!--        <div class="tab_sx">
+            <ul>
+                <li><a href="javascript:;" class="hover" id="vip1" onmouseover="setContentTab('vip',1,5)">优质会员</a></li>
+                <li><a href="javascript:;" id="vip2" onmouseover="setContentTab('vip',2,5)">优质会员</a></li>
+                <li><a href="javascript:;" id="vip3" onmouseover="setContentTab('vip',3,5)">优质会员</a></li>
+                <li><a href="javascript:;" id="vip4" onmouseover="setContentTab('vip',4,5)">优质会员</a></li>
+                <li><a href="javascript:;" id="vip5" onmouseover="setContentTab('vip',5,5)">优质会员</a></li>
+            </ul>
+        </div>
+-->    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="vip">
+    	<div class="w1150">
+        
+        	<ul id="con_vip_1">
+        	{dede:sql sql="select m.mid,m.userid,m.uname,m.sex,m.face,p.birthday,p.city,p.height from dede_member as m left join dede_member_person p on m.mid=p.mid where m.uname!='' and p.birthday!='' and p.city!='' and m.face!='' and p.height!='' ORDER BY  `m`.`mid` DESC LIMIT 0,18"}
+            <li>
+            	<div class="con_vip_hidden">
+                    <a href="/member/index.php?uid=[field:userid/]" target="_blank">
+                        <div class="con_vip_img"><img src="[field:face/]" alt="[field:uname/]" /></div>
+                    </a>
+                    <div class="con_vip_zx">
+                        <a href="javascript:;" onclick="cdpopuptrigger2(-2,'[field:uname/]','[field:face/]')"><span class="s-hi"><i></i>发私信</span></a>
+                        <b>|</b>
+                        <a href="javascript:;"><span class="l-wu"><i></i>送礼物</span></a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_vip_name"><a href="/member/index.php?uid=[field:userid/]" target="_blank">[field:uname/]</a></div>
+                <div class="clear"></div>
+                <p>
+                    <i>[field:birthday/]岁 | [field:height/]CM | [field:city/]</i>
+                </p>
+            </li>
+            {/dede:sql}
+            </ul>
+            
+        	<ul id="con_vip_2" class="dinone">
+            	<li><a href=""><div class="con_vip_img"><img src="/images/toux_03.jpg" /></div><p><b>刘财</b><i>21岁 178CM</i></p></a><i class="viplv v1" title="VIP1会员"></i><em title="点击对话">对话</em></li>                
+            </ul>
+            
+        	<ul id="con_vip_3" class="dinone">
+            	<li><a href=""><div class="con_vip_img"><img src="/images/toux_03.jpg" ></div><p><b>刘财</b><i>21岁 178CM</i></p></a><i class="viplv v1" title="VIP1会员"></i><em title="点击对话">对话</em></li>                
+            </ul>
+            
+        	<ul id="con_vip_4" class="dinone">
+            	<li><a href=""><div class="con_vip_img"><img src="/images/toux_03.jpg" /></div><p><b>刘财</b><i>21岁 178CM</i></p></a><i class="viplv v1" title="VIP1会员"></i><em title="点击对话">对话</em></li>                
+            </ul>
+            
+        	<ul id="con_vip_5" class="dinone">
+            	<li><a href=""><div class="con_vip_img"><img src="/images/toux_03.jpg" /></div><p><b>刘财</b><i>21岁 178CM</i></p></a><i class="viplv v1" title="VIP1会员"></i><em title="点击对话">对话</em></li>                
+            </ul>
+            
+			<script type="text/javascript">
+                function cdpopuptrigger2(ids,username,faceurl){
+						$('.tanchu'+ids).addClass('is-visible');
+						
+				        var taget_obj = document.getElementById('sixin-login');   
+				        myajax = new DedeAjax(taget_obj,false,false,'','','');   
+				        myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_sixin.php?msgtoid="+username+"&usertx="+faceurl);   
+				        DedeXHTTP = null;
+				}
+				function cdpopupclose2(ids){
+							$('.tanchu'+ids).removeClass('is-visible');
+				}
+			</script>
+            
+        </div>
+    </div>
+            
+            <div class="cd-popup-2 tanchu-2">
+                <div class="cd-popup-container-2" id="sixin-login">
+                	<h3>用户登陆</h3>
+                    <div class="sixin-input">
+                    <form name='form1' method='POST' action='/member/index_do.php'>
+                      <input type="hidden" name="fmdo" value="login">
+                      <input type="hidden" name="dopost" value="login">
+                      <input type="hidden" name="gourl" value="/member/">
+                      <input type="hidden" value="2592000" checked="checked" name="keeptime" id="ra1"/>
+                        <p><input type="text" id="txtPassword" name="userid" class="textreg" onkeyup="STip(this.value, event);" value="手机号/邮箱" onFocus="if(this.value=='手机号/邮箱'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='手机号/邮箱'"  /></p>
+                        
+                        <p><input id="txtPassword" type="text" name="pwd" class="textreg" value="密码" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';}"/></p>
+                        <p><input id="vdcode" type="text" name="vdcode"/> <img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="/include/vdimgck.php"/></p>
+                        <button id="btnSignCheck" type="submit" class="submit" />马上登陆</button>
+                        <a href="/member/index_do.php?fmdo=user&dopost=regnew" class="submit2">免费注册</a>
+                    </form>
+                    </div>
+                    
+                    <a href="javascript:;" onclick="cdpopupclose2(-2)" class="cd-popup-close-2">close</a>
+
+                </div>
+            </div>
+    
+    <div class="clear"></div>
+    
+    <script type="text/javascript">
+	function sub() {  
+		var sayv=$("#saysx").val();
+		if(sayv.length==''){
+			alert("请填写内容！");
+			return false;	
+		}
+        $.ajax({  
+                cache: true,  
+                type: "POST",  
+                url:"/member/pm2.php",  
+                data:$('#formId').serialize(),// 你的formid  
+                async: false,  
+                error: function(request) {  
+                    alert("未知错误！");  
+                },  
+                success: function(data) {
+                    alert("发送成功！");
+					$('.tanchu-2').removeClass('is-visible');
+                }  
+            });
+    }  
+	
+	(function($){  
+	  $.extend($,{  
+		fixedWidth:function(str,length,char){  
+		  str=str.toString();  
+		  if(!char) char="...";  
+		  var num=length-lengthB(str);  
+		  if(num<0) 
+		  {  
+			str=substringB(str,length-lengthB(char))+char;  
+		  }  
+		  return str;  
+		  function substringB(str,length) 
+		  {  
+			var num=0,len=str.length,tenp="";  
+			if(len) 
+			{  
+			  for(var i=0;i<len;i++) 
+			  {  
+				if(num>length) break;  
+				if(str.charCodeAt(i)>255) 
+				{  
+				  num+=2;  
+				  tenp+=str.charAt(i);  
+				} 
+				else 
+				{  
+				  num++;  
+				  tenp+=str.charAt(i);  
+				}  
+			  }  
+			  return tenp;  
+			} 
+			else 
+			{  
+			  return null;  
+			}  
+		  }  
+		  function lengthB(str) 
+		  {  
+			var num=0,len=str.length;  
+			if(len) 
+			{  
+			  for(var i=0;i<len;i++) 
+			  {  
+				if(str.charCodeAt(i)>255) 
+				{  
+				  num+=2;  
+				} 
+				else 
+				{  
+				  num++;  
+				}  
+			  }  
+			  return num;  
+			} 
+			else 
+			{  
+			  return 0;  
+			}  
+		  }  
+		}  
+	  });  
+	})(jQuery);  
+
+	function blurs(){
+		var sayv=$("#saysx").val();
+		var sayv1=$.fixedWidth(sayv,30);
+		$("#titlesx").attr("value",sayv1);
+	}
+	
+    </script>
+    <!--<div class="checkmore"><a href="">查看更多</a></div>-->
+    
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="search">
+    	<div class="w1150">
+            <div class="serachwd">
+                <div class="search_ico"><i></i>搜索网站更多优质会员</div>
+                <ul>
+                    <form action="/member/search.php">
+                    <input class="intxt" type='hidden' name='keyword' value=''/>
+                        <li class="search_loca">
+                        <select tabindex="4" id="city" name="city" class="dropdown" data-settings='{"cutOff":8}'>
+              	<option value='成都市'>成都市</option>
+              	<option value='绵阳市'>绵阳市</option>
+              	<option value='重庆市'>重庆市</option>
+              	<option value='广州市'>广州市</option>
+              	<option value='北京市'>北京市</option>
+              	<option value='深圳市'>深圳市</option>
+              	<option value='杭州市'>杭州市</option>
+              	<option value='西安市'>西安市</option>
+              	<option value='武汉市'>武汉市</option>
+              	<option value='天津市'>天津市</option>
+              	<option value='上海市'>上海市</option>
+              	<option value='石家庄市'>石家庄市</option>
+              	<option value='郑州市'>郑州市</option>
+              	<option value='长沙市'>长沙市</option>
+              	<option value='南昌市'>南昌市</option>
+              	<option value='沈阳市'>沈阳市</option>
+              	<option value='长春市'>长春市</option>
+              	<option value='哈尔滨市'>哈尔滨市</option>
+              	<option value='太原市'>太原市</option>
+              	<option value='济南市'>济南市</option>
+              	<option value='西宁市'>西宁市</option>
+              	<option value='合肥市'>合肥市</option>
+              	<option value='海口市'>海口市</option>
+              	<option value='贵阳市'>贵阳市</option>
+              	<option value='福州市'>福州市</option>
+              	<option value='兰州市'>兰州市</option>
+              	<option value='昆明市'>昆明市</option>
+              	<option value='西藏'>西藏</option>
+              	<option value='宁夏'>宁夏</option>
+              	<option value='广西'>广西</option>
+              	<option value='新疆'>新疆</option>
+              	<option value='内蒙古'>内蒙古</option>
+                        </select>
+                        </li>
+                        <input type="hidden" id="minage0" name="minage" value="20" />
+                        <input type="hidden" id="minage1" name="maxage" value="25" />
+                        <script type="text/javascript">
+                        	function getval(thisval){
+								var strs= new Array();
+								strs=thisval.split(",");
+								for (i=0;i<strs.length ;i++ ) 
+								{
+									document.getElementById("minage"+[i]).value=strs[i];
+								}
+							}
+                        </script>
+                        
+                        <li>
+                        <select tabindex="4" class="dropdown" data-settings='{"cutOff":8}' onchange="getval(this.value)">
+                        	<option value="20,25" selected="selected">20-25岁</option>
+                            <option value="25,30">25-30岁</option>
+                            <option value="30,35">30-35岁</option>
+                            <option value="35,40">35-40岁</option>
+                            <option value="40,45">40-45岁</option>
+                            <option value="45,50">45-50岁</option>
+                            <option value="50,55">50-55岁</option>
+                            <option value="55,60">55-60岁</option>
+                            <option value="60,65">60-65岁</option>
+                            <option value="65,70">65-70岁</option>
+                        </select>
+                        </li>
+
+              <li>
+              <select class="dropdown" name="sex">
+                  <option value="男" selected="selected">男会员</option>
+                  <option value="女">女会员</option>
+              </select>
+              </li>
+
+                        <li class="search_submit"><input type="submit" name="search" value="搜 索" /></li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+	<div class="indexActive">
+
+        <div class="partTit">
+            <p class="titp1">
+                <span class="titspan3">
+                    <em class="ft32">线下交友活动</em>
+                    <i class="eng2">零距离接触亲密约会，寻找有缘的那个TA</i>
+                </span>
+            </p>
+        </div>
+
+
+        <div class="picScroll">
+            <div class="tempWrap" style="overflow:hidden; position:relative; width:960px">
+            
+            <ul style="width: 3200px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+            
+            {dede:arclist titlelen=43 addfields='didian,feiyong,baoming,zhuangtai' row=10 orderby='update' typeid='8' channelid='18'}
+            <li>
+                <dl>
+                    <dt>
+                        <a href="[field:arcurl/]" target="_blank">
+                        <img src="[field:litpic/]" alt="[field:title/]" height="150" width="300">
+                        </a>
+                    	[field:zhuangtai runphp='yes']
+                        	$zhuangtai=@me;
+                            if($zhuangtai=='已结束'){
+                            	@me='<span class="enterStop">报名结束</span>';
+                            }else{
+                            	@me='<span class="enterNow">正在报名</span>';
+                            }
+                        [/field:zhuangtai]
+                    </dt>
+                    <dd onclick="window.location='[field:arcurl/]'">
+                        <h4>[field:title/]</h4>
+                        <p class="picScroll-p"><span>[field:didian/]</span><span>[field:feiyong/]</span><span>[field:baoming/]人报名</span></p>
+                    	[field:zhuangtai runphp='yes']
+                        	$zhuangtai=@me;
+                            if($zhuangtai=='已结束'){
+                            	@me='<i class="jiezhi">活动截至</i>';
+                            }else{
+                            	@me='<i>立即报名</i>';
+                            }
+                        [/field:zhuangtai]
+                    </dd>
+                </dl>
+            </li>
+            {/dede:arclist}
+            
+            </ul>
+            
+            </div>
+            
+            <a class="prev prevStop"></a>						
+            <a class="next"></a>
+        </div>
+        <a href="/a/huodong/" id="indexActive-more">更多</a>		
+	</div>
+    
+    <script type="text/javascript">
+    	jQuery(".picScroll").slide({ mainCell:"ul",autoPlay:false,effect:"left", vis:3, scroll:1, autoPage:true, pnLoop:false });
+    </script>
+    
+    <div class="clear"></div>
+    
+    <div class="bgclor1">
+        <div class="w1150">
+            <div class="partTit">
+                <p>
+                    <span class="titspan1">
+                        <em class="ft31">金玉红娘 缔结良缘</em>
+                        <i class="eng">会员实名制，红娘一对一服务，为您量身匹配另一半</i>
+                    </span>
+                </p>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="hongn">
+                <ul>
+                
+                	{dede:arclist titlelen=43 addfields='jingyan,zhiwei,anli,linian' flag='c' row=9 orderby='update' typeid='5' channelid='17'}
+                    <li>
+                        <div class="hn_tx"><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic/]" alt="[field:title/]" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="[field:arcurl/]" target="_blank">[field:title/]</a><i>[field:zhiwei/]</i><p>[field:linian function='cn_substr(@me,62)'/]...</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>[field:jingyan /]</i><br />成功配对: <i>[field:anli/]</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="[field:arcurl/]" target="_blank" class="hn_zx1">详细资料</a><a href="/call.html" class="hn_zx2" target="_blank">求配对</a></div>
+                        </div>
+                    </li>
+                    {/dede:arclist}
+                    
+                </ul>
+            </div>
+            
+    
+            <div class="clear"></div>
+            
+            <div class="checkmore"><a href="/a/hongniang/">查看更多</a></div>
+            
+            <div class="clear"></div>
+
+        </div><!--W1150-->
+    </div><!--BG-->
+    
+    <div class="clear"></div>
+    
+    <div class="w1150">
+    	<div class="media">
+        	<div class="media_h1">金玉传媒  <a href="/a/chuanmei/" target="_blank">更多>></a></div>
+        	<div class="media_c">
+            	{dede:arclist titlelen=43 row=1 orderby='update' typeid='11'}
+            	<a href="[field:arcurl/]" target="_blank">
+                	<img src="[field:litpic/]" alt="[field:title/]" />
+                    <p><i></i>[field:title/]</p>
+                    <i class="icon-play7070" ></i>
+                </a>
+                {/dede:arclist}
+            </div>
+        </div>
+        
+        <div class="hlclass">
+        	<div class="hlclass_h1">婚恋课堂 <a href="/a/ketang/" target="_blank">更多>></a></div>
+            <div class="hlclass_c">
+            	<ul>
+                	{dede:arclist titlelen=43 row=6 orderby='update' typeid='6' notypeid='25'}
+                	<li>
+                    	<a href="[field:arcurl/]" target="_blank" title="[field:title/]"><div class="hlclass_i"><img src="[field:litpic/]" alt="[field:title/]" /></div><p>[field:title/]</p></a>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+            </div>
+        </div>
+    
+    
+    </div><!--W1150-->
+    
+    <div class="clear"></div>
+    
+    <div class="bgclor1">
+        <div class="lover_w">
+        	<div class="lover">
+            	<div class="lover_h1"><i></i><b>他们相爱啦！</b> 已经有 <em>1</em><em>6</em><em>8</em><em>2</em><em>0</em><em>3</em>人在<span>金玉良缘</span>找到了另一半</div>
+            
+                <div class="clear"></div>
+            
+                <div class="lover_c">
+                    <div class="lover_cl">
+                        <ul>
+                        	{dede:arclist titlelen=43 orderby='id' typeid='26' noflag='h' limit='0,4'}
+                            <li><a href="[field:arcurl/]" target="_blank" title="[field:title/]"><img src="[field:litpic/]" alt="[field:title/]" /></a></li>
+                            {/dede:arclist}
+                        </ul>
+                    </div>
+                    
+                    <div class="lover_cl2">
+                    	{dede:arclist titlelen=43 orderby='id' row='1' typeid='26' limit='0,1' flag='h' addfields='shuimg' channelid='1'}
+                        <a href="[field:arcurl/]" target="_blank" title="[field:title/]"><img src="[field:shuimg/]" alt="[field:title/]" /></a>
+                        {/dede:arclist}
+                    </div>
+                    
+                    <div class="lover_cl3">
+                        <ul>
+                        	{dede:arclist titlelen=43 orderby='id' typeid='26'  noflag='h' limit='4,2'}
+                            <li><a href="[field:arcurl/]" target="_blank" title="[field:title/]"><img src="[field:litpic/]" alt="[field:title/]" /></a></li>
+                            {/dede:arclist}
+                        </ul>
+                    </div>
+                    
+                    <div class="lover_cl2">
+                    	{dede:arclist titlelen=43 orderby='id' typeid='26' limit='1,1' row='1' flag='h' addfields='shuimg' channelid='1'}
+                        <a href="[field:arcurl/]" target="_blank" title="[field:title/]"><img src="[field:shuimg/]" alt="[field:title/]" /></a>
+                        {/dede:arclist}
+                    </div>
+
+                    <div class="lover_cl">
+                        <ul>
+                        	{dede:arclist titlelen=43 orderby='id' typeid='26' noflag='h' limit='6,4'}
+                            <li><a href="[field:arcurl/]" target="_blank" title="[field:title/]"><img src="[field:litpic/]" alt="[field:title/]" /></a></li>
+                            {/dede:arclist}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="about">
+    	<div class="w1150">
+        	<div class="about_h1">
+            	专业金牌红娘，打造全国线下直营高端婚恋品牌
+            </div>
+            
+            <div class="clear"></div>
+            
+        	<div class="about_c">
+            	<div class="about_c1">
+                	<p><b>目前，网站注册会员高达<i>2000</i>万</b></p>
+                    <p>已有<i>100000</i>多单身男女通过金玉良缘找到了自己的幸福</p>
+                    <p>金牌红娘强大团队<i>500</i>余人，举办大小活动<i>3000</i>余场</p>
+                    
+                    <div class="clear"></div>
+                    
+                    <div class="about_c2">
+                        <ul>
+                            <li><p><img src="/images/about_17.png" alt="金玉良缘男会员占比率" /><br />男会员占比</p></li>
+                            <li><p><img src="/images/about_19.png" alt="金玉良缘女会员占比率" /><br />女会员占比</p></li>
+                            <li><p><img src="/images/about_21.png" alt="金玉良缘配对成功率" /><br />配对成功率</p></li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="houban">
+    	<div class="w1150">
+            <div class="huoban_h1"><b>合作伙伴</b><p>金玉良缘网凭借优质的服务，良好的品牌，赢得了在内的国内外主流媒、各级政府部门一致肯定</p></div>
+            <div class="huoban_c">
+                <ul>
+                    <li><img src="/images/huoban_28.jpg" alt="大成网" /></li>
+                    <li><img src="/images/huoban_30.jpg" alt="成都广播电视台" /></li>
+                    <li><img src="/images/huoban_32.jpg" alt="成都晚报" /></li>
+                    <li><img src="/images/huoban_34.jpg" alt="无限成都" /></li>
+                    <li><img src="/images/huoban_36.jpg" alt="四川新闻网" /></li>
+                    <li><img src="/images/huoban_38.jpg" alt="成都全搜索" /></li>
+                    <li><img src="/images/huoban_40.jpg" alt="华西都市网" /></li>
+                    <li><img src="/images/huoban_42.jpg" alt="爱帮公益" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+    
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/member.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+<style>
+.mt15{ margin-top:15px;}
+.w1050{ width:1000px; margin:auto; margin-top:20px;}
+</style>
+<body style=" background:rgba(246,244,245,.84);">
+	
+	<div class="w1050 mt15">
+    	
+        <div class="member">
+        	<div class="member_img">{dede:if $_vars['face']=='' } <img src="space/person/common/images/noavatar.gif" alt="<?php echo $row['uname']; ?>还没设置头像" /> {else} <img src="{dede:var.face/}" alt="{dede:var.uname/}的头像" /> {/dede:if}</div>
+            <div class="member_info">
+            	<h1>{dede:var.uname /}</h1>
+                <span>会员等级：{dede:var.membername/} 空间访问：{dede:var.homecount/}</span>
+                <div class="member_info_p">
+                	<p><i>身高：</i><?php echo $row['height']; ?>厘米</p>
+                	<p><i>体重：</i><?php echo GetEnumsValue('bodytype',$row['bodytype']); ?></p>
+                	<p><i>年龄：</i><?php echo $row['birthday']; ?></p>
+                	<p><i>地区：</i><?php $places = GetEnumsTypes($row['place']);echo ( isset($em_nativeplaces[$places['son']]) ?  $em_nativeplaces[$places['son']] : '');?></p>
+                	<p><i>星座：</i><?php echo GetEnumsValue('star',$row['star']); ?></p>
+                	<p><i>血型：</i><?php echo GetEnumsValue('blood',$row['blood']); ?></p>
+                	<p><i>婚姻状况：</i><?php echo GetEnumsValue('marital',$row['marital']); ?></p>
+                	<p><i>交友目的：</i><?php echo GetEnumsValue('datingtype',$row['datingtype']); ?></p>
+                	<p><i>住房情况：</i><?php echo GetEnumsValue('house',$row['house']); ?></p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+            <div class="member_info_zx">
+            	<a href="pm.php?dopost=send&uid={dede:var.userid/}">发私信</a><a href="index.php?action=newfriend&uid={dede:var.userid/}">关注他</a><a href="index.php?action=guestbook&uid={dede:var.userid/}">留言</a><a href="index.php?action=blackfriend&uid={dede:var.userid/}">黑名单</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+            
+        <div class="clear"></div>
+        
+        <div class="member2">
+            <div class="member_left">
+                <div class="member_desc">
+                    <i class="member_desc-yinhao1"></i>
+                    <p>{dede:var.msg /}</p>
+                    <i class="member_desc-yinhao2"></i>
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico1"></i>详细资料</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>身高：</i><?php echo $row['height']; ?>厘米</p>
+                        <p><i>体重：</i><?php echo GetEnumsValue('bodytype',$row['bodytype']); ?></p>
+                        <p><i>年龄：</i><?php echo $row['birthday']; ?></p>
+                        <p><i>地区：</i><?php $places = GetEnumsTypes($row['place']);echo ( isset($em_nativeplaces[$places['son']]) ?  $em_nativeplaces[$places['son']] : '');?></p>
+                        <p><i>星座：</i><?php echo GetEnumsValue('star',$row['star']); ?></p>
+                        <p><i>血型：</i><?php echo GetEnumsValue('blood',$row['blood']); ?></p>
+                        <p><i>婚姻状况：</i><?php echo GetEnumsValue('marital',$row['marital']); ?></p>
+                        <p><i>交友目的：</i><?php echo GetEnumsValue('datingtype',$row['datingtype']); ?></p>
+                        <p><i>住房情况：</i><?php echo GetEnumsValue('house',$row['house']); ?></p>
+                        <p><i>收入情况：</i><?php echo GetEnumsValue('income',$row['income']); ?></p>
+                        <p><i>教育程度：</i><?php echo GetEnumsValue('education',$row['education']); ?></p>
+                        <p><i>所属行业：</i><?php echo GetEnumsValue('vocation',$row['vocation']); ?></p>
+                        
+                    </div>
+                </div>
+            
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico2"></i>生活状况</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                    </div>
+                </div>
+            
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico3"></i>兴趣爱好</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                    </div>
+                </div>
+            
+                <div class="clear"></div>
+                
+                <div class="member_xiangxi">
+                    <div class="member_xiangxi_fl"><i class="xiangxi_ico4"></i>择偶条件</div>
+                    <div class="member_xiangxi_info">
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                        <p><i>住房条件：</i>有</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="member_right">
+            	<div class="member_right_vip">
+                    <dl class="dl_3">
+                        <dt>  
+                          <h3>VIP会员</h3>
+                          <p class="p_1">有效时间：180天</p>
+                          <p class="p_2">￥0.11元/天</p>
+                          <p class="p_3">会员价￥20</p>
+                        </dt>
+                        <dd><span>立即开通</span></dd>
+                    </dl>                
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="member_right_a">
+                	<a href=""><img src="/images/righta.jpg" /></a>
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="hd_hy_list">
+                    <h3>优质会员</h3>
+                    <ul>
+                        <li><a href="" class="hd_bm_list_img"><img src="/images/tx3.jpg" /></a><a href="" class="hd_bm_list_name">三四十</a><p><span>30岁 成都 5000-10000</span><br /><b>希望找到一个可以带我到世界某个角落欣赏着日出日落的人</b></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>
+                        <li><a href="" class="hd_bm_list_img"><img src="/images/tx3.jpg" /></a><a href="" class="hd_bm_list_name">三四十</a><p><span>30岁 成都 5000-10000</span><br /><b>希望找到一个可以带我到世界某个角落欣赏着日出日落的人</b></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>
+                        <li><a href="" class="hd_bm_list_img"><img src="/images/tx3.jpg" /></a><a href="" class="hd_bm_list_name">三四十</a><p><span>30岁 成都 5000-10000</span><br /><b>希望找到一个可以带我到世界某个角落欣赏着日出日落的人</b></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>
+                        <li><a href="" class="hd_bm_list_img"><img src="/images/tx3.jpg" /></a><a href="" class="hd_bm_list_name">三四十</a><p><span>30岁 成都 5000-10000</span><br /><b>希望找到一个可以带我到世界某个角落欣赏着日出日落的人</b></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>
+                        <li><a href="" class="hd_bm_list_img"><img src="/images/tx3.jpg" /></a><a href="" class="hd_bm_list_name">三四十</a><p><span>30岁 成都 5000-10000</span><br /><b>希望找到一个可以带我到世界某个角落欣赏着日出日落的人</b></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="clear"></div>
+            
+        </div>
+        
+        
+        
+    </div>
+
+</body>
+</html>

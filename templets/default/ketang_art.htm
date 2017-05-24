@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_金玉良缘网</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+    
+    <div class="w1150">
+    	<div class="ke_art_fl">
+        
+        <div class="postion">{dede:field name='position'/} {dede:field.title/}</div>
+            
+            <div class="clear"></div>
+            
+            <h1>{dede:field.title/}</h1>
+            
+            <div class="clear"></div>
+            
+            <div class="ke_art_fl_info">时间:{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/} 来源:金玉良缘网 阅读：<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></div>
+            
+            <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            </div>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+            </script>            
+            
+            <div class="clear"></div>
+            
+            <div class="ke_art_fl_body">
+                {dede:field.body/}
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="ke_art_fl_zan">
+            	<p>赞一个，觉得很好</p>
+                <a href="javascript:;" title="赞一个" class="img_on" rel="{dede:field.id/}"><i id="zannum"></i></a>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <script>
+			
+			$(document).ready(function() { 
+				$.getJSON("/zan2.php?action=getnum&ids={dede:field.id/}", 
+				function(data) { 
+					$("#zannum").html(data);; 
+				}); 
+			}); 			
+			
+            $(function(){ 
+					
+					$(".ke_art_fl_zan a").click(function(){ 
+						var zan = $(this); 
+						var id = zan.attr("rel"); //对应id 
+						$.ajax({
+							type:"POST", 
+							url:"/zan2.php", 
+							data:{id:id,action:"cclick"}, 
+							cache:false, //不缓存此页面 
+							success:function(data){ 
+								zan.html(data); 
+								zan.fadeIn(300); //渐显效果 
+							} 
+						});
+						return false; 
+					}); 
+			});
+            </script>
+            
+            <div class="clear"></div>
+            
+            <div class="ke_art_fl_tj">
+            	<h3>推荐阅读</h3>
+                
+                <ul>
+                	{dede:arclist titlelen=100 row=5 orderby='rand' typeid='6'}
+                	<li>
+                    	<a href="[field:arcurl/]">
+                        	<div class="pic_box"><img src="[field:litpic /]" /></div>
+                            <div class="info_box">
+                            	<div class="ktj_title">[field:title/]</div>
+                            	<div class="ktj_info">[field:description/] ....</div>
+                            </div>
+                        </a>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+            </div>
+        
+        </div>
+    
+    
+    	<div class="ke_art_fr">
+        	
+            <div class="kt_newright1">
+            	<h3>栏目导航</h3>
+                <ul>
+                	<li><a href="/a/ketang/mt">媒体报道</a></li>
+                	<li><a href="/a/ketang/rj">相亲日记</a></li>
+                	<li><a href="/a/ketang/bd">恋爱宝典</a></li>
+                	<li><a href="/a/ketang/sx">十二生肖</a></li>
+                	<li><a href="/a/ketang/xz">星座匹配</a></li>
+                	<li><a href="/a/ketang/mm">生活秘密</a></li>
+                	<li><a href="/a/ketang/gs">恋爱经历</a></li>
+                	<li><a href="/a/ketang/cgg">成功故事</a></li>
+                </ul>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="kt_ewm"><img src="/images/rightewm.jpg" width="340" /></div>
+            
+            <div class="clear"></div>
+            
+            <div class="kt_newright2">
+            	<h3>24小时推荐热文</h3>
+            	<ul>
+                	{dede:arclist titlelen=100 row=5 orderby='click' typeid='6' subday='7'}
+                	<li>
+                    	<div class="kt_newright2_img"><a href="[field:arcurl/]"><img src="[field:litpic /]" alt="[field:title/]" /></a></div>
+                        <div class="kt_newright2_title"><a href="[field:arcurl/]">[field:title/]</a></div>
+                        <div class="kt_newright2_info">[field:info/]</div>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+            </div><!--kt_newright2-->
+            
+            <div class="clear"></div>
+            
+            <div class="hd_hy_list">
+                <h3>优质会员</h3>
+                <ul>
+                    	{dede:sql sql="select m.mid,m.userid,m.uname,m.sex,m.face,p.birthday,p.city,p.height from dede_member as m left join dede_member_person p on m.mid=p.mid where m.uname!='' and p.birthday!='' and p.city!='' and m.face!='' and p.height!='' ORDER BY rand() DESC LIMIT 0,5"}
+                        <li><a href="/member/index.php?uid=[field:userid/]" class="hd_bm_list_img"><img src="[field:face/]" alt="[field:uname/]" /></a><a href="/member/index.php?uid=[field:userid/]" class="hd_bm_list_name">[field:uname/]</a><p><span>[field:birthday/]岁 | [field:height/]CM | [field:city/]</span></p><p><a href="/member/pm.php?dopost=send&uid=[field:userid/]">打招呼</a><a href="/member/index.php?action=newfriend&uid=[field:userid/]">关注他</a></p></li>
+                        {/dede:sql}
+                </ul>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="kt_newright3">
+            	<h3>联系我们</h3>
+                <div class="kt_newright_call">
+                	<p>红娘热线：<i>028-86145520</i></p>
+                	<p>联系地址：成都市青羊区西御街西御大厦A座25楼</p>
+                    <p><a href="/call.html" target="_blank">咨询红娘</a> <a href="/call.html" target="_blank">疑问解答</a></p>
+                </div>
+            </div>            
+        
+        </div>
+    
+    </div>
+    
+    <div class="clear"></div>
+    
+	{dede:include filename="footer.htm"/}
+</body>
+</html>

@@ -1,0 +1,70 @@
+127.0.0.1||/member/||SELECT 
+		m.mid,m.sex,m.userid,m.uname,m.face,
+		p.birthday,p.place,p.income,
+		ms.msg
+		FROM `dede_member` as m 
+		left join `dede_member_person` as p on p.mid=m.mid 
+		(select msg, max(id) from `dede_member_msg` group by id) ms on ms.mid=p.mid
+		where m.matt!=10
+		||sub select detect
+127.0.0.1||/member/||SELECT 
+		m.mid,m.sex,m.userid,m.uname,m.face,
+		p.birthday,p.place,p.income,
+		ms.msg
+		FROM `dede_member` as m 
+		left join `dede_member_person` as p on p.mid=m.mid 
+		left join (select msg, max(id) from `dede_member_msg` group by id) ms on ms.mid=p.mid
+		where m.matt!=10
+		||sub select detect
+127.0.0.1||/member/||SELECT 
+		m.mid,m.sex,m.userid,m.uname,m.face,
+		p.birthday,p.place,p.income,
+		ms.msg
+		FROM `dede_member` as m 
+		left join `dede_member_person` as p on p.mid=m.mid 
+		left join (select msg, max(id) from `dede_member_msg` group by id) as ms on ms.mid=p.mid
+		where m.matt!=10
+		||sub select detect
+127.0.0.1||/member/||SELECT 
+		m.mid,m.sex,m.userid,m.uname,m.face,
+		p.birthday,p.place,p.income,
+		ms.msg
+		FROM `dede_member` as m 
+		left join `dede_member_person` as p on p.mid=m.mid 
+		left join (select msg, max(id) from `dede_member_msg`) as ms on ms.mid=p.mid
+		where m.matt!=10
+		||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||
+select * from 
+dede_member as m 
+left join dede_member_person as p 
+on m.mid=p.mid 
+where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`)))
+ORDER BY m.mid LIMIT 1
+||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||
+select * from 
+dede_member as m 
+left join dede_member_person as p 
+on m.mid=p.mid 
+where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`)))
+ORDER BY m.mid LIMIT 1
+||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select * from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select * from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect
+127.0.0.1||/member/ajax_tuijian.php||select m.userid,m.uname,m.sex,m.face,p.birthday,p.height,p.income,p.place,p.lovemsg from dede_member as m left join dede_member_person as p on m.mid=p.mid where m.mid>=(SELECT floor(RAND() * (SELECT MAX(mid) FROM `dede_member`))) ORDER BY m.mid LIMIT 1||sub select detect

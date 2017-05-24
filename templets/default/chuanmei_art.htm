@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_金玉良缘网</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+    <div class="w1150">
+    	<div class="chuanmei_fl">
+        	<div class="postion">{dede:field name='position'/}</div>
+        	<h1><I>[{dede:field.typename/}]</I>{dede:field.title/}</h1>
+            <div class="clear"></div>
+            <div class="chuanmei_fl_content">
+            {dede:field.body/}
+            </div>
+        	
+            <div class="clear"></div>
+            
+            <div class="chuanmei_fl2">
+            
+            <div class="chuanmei_fl_ding"><p><b>点赞：</b><a href="javascript:;" id="zana{dede:field.id/}" title="赞一个" class="img_on" rel="{dede:field.id/}"><i id="zannum">{dede:field.id function="zan(@me)"/}</i></a></p></div>
+            
+            <div class="chuanmei_fl_share">
+            
+            <div class="bdsharebuttonbox">
+                <a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+            </div>
+            
+			<script>
+				window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+			</script>
+            </div>
+            
+            <div class="chuanmei_fl_info">阅读量：<i><script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></i> &nbsp; 时间：{dede:field.pubdate function='GetDateMk(@me)'/} &nbsp; 来源：{dede:field.source/} </div>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="chuanmei_pl">
+                    <h2>我来说两句</h2>
+                    <div class="chuanmei_pl2">
+                        <div class="hn_art_pl">
+                            <form action="#commettop" method="post" name="feedback">
+                                <input type="hidden" name="dopost" value="send" />
+                                <input type="hidden" name="comtype" value="comments">
+                                <input type="hidden" name="aid" value="{dede:field name="id"/}" />
+                                <input type="hidden" name="fid" id='feedbackfid' value="0" />
+                                <textarea class="hn_art_pl_text" contenteditable="true" name="msg"  placeholder="请输入..."></textarea>
+                        </div>
+                        <div class="clear"></div>
+                        
+                        <div class="hn_art_pl_button">
+                                <input type="hidden" name="notuser" id="dcmp-submit-guest" />
+                                <button onClick='PostComment()'>提交</button>
+                            </form>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    
+
+                    <a name='commettop'></a>
+                    <div id='commetcontentNew'></div>
+                    <div id='commetcontent'></div>
+                    <div class="clear"></div>
+<!--
+//由于评论载入时使用异步传输，因此必须在最后一步加载（DIGG和评论框须放在评论内容前面）
+//如果一定需要提前的把myajax.SendGet改为myajax.SendGet2，但可能会引起页面阻滞
+-->
+			<script type="text/javascript">
+			$(document).ready(function() { 
+				$.getJSON("/zan2.php?action=getnum&ids={dede:field.id/}", 
+				function(data) { 
+					$("#zannum").html(data);; 
+				}); 
+			}); 			
+			
+				$(function(){ 
+					$(".chuanmei_fl_ding a").click(function(){ 
+						var zan = $(this); 
+						var id = zan.attr("rel"); //对应id 
+						$('#zana'+id).addClass("hovers");
+						$.ajax({
+							type:"POST", 
+							url:"/zan.php", 
+							data:"id="+id, 
+							cache:false, //不缓存此页面 
+							success:function(data){ 
+								zan.html(data); 
+								zan.fadeIn(300); //渐显效果 
+							} 
+						}); 
+						return false; 
+					}); 
+				});
+			
+            </script>
+
+<script language='javascript'>
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		 var saveids = saveid.split(',');
+		 var hasid = false;
+		 saveid = '';
+		 j = 1;
+		 for(i=saveids.length-1;i>=0;i--)
+		 {
+		 	  if(saveids[i]==fid && hasid) continue;
+		 	  else {
+		 	  	if(saveids[i]==fid && !hasid) hasid = true;
+		 	  	saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+		 	  	j++;
+		 	  	if(j==10 && hasid) break;
+		 	  	if(j==9 && !hasid) break;
+		 	  }
+		 }
+     if(hasid) { alert('您刚才已表决过了喔！'); return false; }
+     else saveid += ','+fid;
+		 SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("{dede:global.cfg_phpurl /}/feedback.php?aid=1&action="+ftype+"&fid="+fid);
+  DedeXHTTP = null;
+}
+
+function LoadCommets(page)
+{
+		var taget_obj = document.getElementById('commetcontent');
+		var waithtml = "<div style='line-height:50px'><img src='{dede:global.cfg_cmsurl/}/images/loadinglit.gif' />评论加载中...</div>";
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x', waithtml);
+		myajax.SendGet2("{dede:global.cfg_phpurl /}/feedback_ajax.php?dopost=getlist&aid={dede:field.id/}&page="+page);
+		DedeXHTTP = null;
+}
+function PostComment()
+{
+		var f = document.feedback;
+		var nface = '6';
+		var nfeedbacktype = 'feedback';
+		var nnotuser = '';
+		var nusername = '';
+		var npwd = '';
+		var taget_obj = $DE('commetcontentNew');
+		var waithtml = "<div style='line-height:30px'><img src='{dede:global.cfg_cmsurl/}/images/loadinglit.gif' />正在发送中...</div>";
+		if(f.msg.value=='')
+		{
+			alert("评论内容不能为空！");
+			return;
+		}
+		if(f.msg.value.length > 500)
+		{
+			alert("你的评论是不是太长了？请填写500字以内的评论。");
+			return;
+		}
+		if(f.feedbacktype) {
+			for(var i=0; i < f.feedbacktype.length; i++)
+				if(f.feedbacktype[i].checked) nfeedbacktype = f.feedbacktype[i].value;
+		}
+		if(f.face) {
+			for(var j=0; j < f.face.length; j++)
+				if(f.face[j].checked) nface = f.face[j].value;
+		}
+		if(f.notuser.checked) nnotuser = '1';
+		if(f.username) nusername = f.username.value;
+		if(f.pwd) npwd = f.pwd.value;
+		
+		var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+		myajax.sendlang = '{dede:global.cfg_soft_lang/}';
+		myajax.AddKeyN('dopost', 'send');
+		myajax.AddKeyN('aid', '{dede:field.id/}');
+		myajax.AddKeyN('fid', f.fid.value);
+		myajax.AddKeyN('face', nface);
+		myajax.AddKeyN('feedbacktype', nfeedbacktype);
+		myajax.AddKeyN('notuser', nnotuser);
+		myajax.AddKeyN('username', nusername);
+		myajax.AddKeyN('pwd', npwd);
+		myajax.AddKeyN('msg', f.msg.value);
+		myajax.SendPost2('{dede:global.cfg_phpurl/}/feedback_ajax.php');
+		f.msg.value = '';
+		f.fid.value = 0;
+}
+function quoteCommet(fid)
+{
+	document.feedback.fid.value = fid;
+}
+LoadCommets(1);
+</script><!-- //评论内容区结束 -->
+                    
+            </div>
+            
+        </div>
+        
+    	<div class="chuanmei_fr">
+        	<div class="chuanmei_fr2">
+            	<h3>金玉良缘我想说</h3>
+                <div class="clear"></div>
+            	<ul>
+                	{dede:arclist titlelen=100 row=3  typeid='22' orderby="update"}
+                	<li>
+                    	<div class="chuanmei_fr_img"><a href="[field:arcurl/]"><img src="[field:litpic /]" alt="[field:title/]" /></a></div>
+                        <div class="chuanmei_fr_title"><a href="[field:arcurl/]">[field:title/]</a></div>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+                <div class="clear"></div>
+                <div class="bottom_more"><a href="">查看更多</a></div>
+                <div class="clear"></div>
+            </div>
+            
+            
+            
+        	<div class="chuanmei_fr2">
+            	<h3>缘来在这里</h3>
+                
+                <div class="clear"></div>
+            	<ul>
+                	{dede:arclist titlelen=100 row=3 orderby='click' typeid='23'}
+                	<li>
+                    	<div class="chuanmei_fr_img"><a href="[field:arcurl/]"><img src="[field:litpic /]" alt="[field:title/]" /></a></div>
+                        <div class="chuanmei_fr_title"><a href="[field:arcurl/]">[field:title/]</a></div>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+                <div class="clear"></div>
+                <div class="bottom_more"><a href="">查看更多</a></div>
+                <div class="clear"></div>
+            </div>
+                
+            
+        	
+            <div class="chuanmei_fr2">
+            	<h3>热门视频推荐</h3>
+                
+                <div class="clear"></div>
+            	<ul>
+                	{dede:arclist titlelen=100 row=3 orderby='click' typeid='24'}
+                	<li>
+                    	<div class="chuanmei_fr_img"><a href="[field:arcurl/]"><img src="[field:litpic /]" alt="[field:title/]" /></a></div>
+                        <div class="chuanmei_fr_title"><a href="[field:arcurl/]">[field:title/]</a></div>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+                <div class="clear"></div>
+                <div class="bottom_more"><a href="">查看更多</a></div>
+                <div class="clear"></div>
+        	</div>
+        </div>
+    	
+    </div>
+	
+    <div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+</body>
+</html>

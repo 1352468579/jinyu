@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘活动页面</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<style>
+body{ background:#f5f8fa}
+</style>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+
+	<div class="list_banner hdb"></div>
+    
+    <div class="clear"></div>
+
+	<div class="w1150">
+    	<div class="hdong_fl">
+        	<div class="hdong_title"><h1>热门活动</h1><span>零距离接触亲密约会，寻找有缘的那个TA</span></div>
+            <div class="clear"></div>
+            
+            {dede:list flag='a' pagesize='20' addfields='baoming,shijian' channelid='18'}
+            <div class="hdong_list">
+            	<div class="hdong_list_tit"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+            	<div class="hdong_list_img"><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic/]" alt="[field:title/]" /></a><p>已报名人数：[field:baoming/]人</p></div>
+            	<div class="hdong_list_bm">活动时间：[field:shijian function="MyDate('Y-m-d H:i',@me)"/] <a href="[field:arcurl/]" target="_blank">免费报名</a></div>
+            </div>
+            {/dede:list}
+            
+            <div class="clear"></div>
+            
+            <h2>往期活动</h2>
+            
+            <div class="clear"></div>
+            
+            
+            {dede:list flag='s' pagesize='20' addfields='baoming,shijian' channelid='18'}
+            <div class="hdong_list">
+            	<div class="hdong_list_tit"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+            	<div class="hdong_list_img"><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic/]" alt="[field:title/]" /></a><p>已报名人数：[field:baoming/]人</p></div>
+            	<div class="hdong_list_bm">活动已结束 <a href="[field:arcurl/]" target="_blank" class="bmjz">报名截止</a></div>
+            </div>
+            {/dede:list}
+            
+        </div>
+    
+    	<div class="hdong_fr">
+        	
+            {dede:include filename="huodong_right.htm"/}
+            
+        </div>
+        
+    </div>
+
+    <div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+</body>
+</html>

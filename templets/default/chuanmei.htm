@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘传媒</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+    {dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+
+	<div class="video_banner"></div>
+    
+		<div class="video_f1">
+        	<div class="video_f1_left">
+            	<div class="video_f1_left_zx"><a href="/a/chuanmei/wxs/" target="_blank">金玉良缘我想说 <i>更多>></i></a></div>
+              <div class="video_f1_left_sp">
+              
+           	   <div class="video_f1_left_1">
+                	{dede:arclist titlelen=100 row=1 orderby='pubdate' flag='c' typeid='11' addfields='bigimg' channelid='1'}
+                   <a href="[field:arcurl/]" target="_blank" title="点击播放">
+                   <img src="[field:bigimg /]" alt="[field:title/]" />
+                   <div class="video_f1_left_2">[field:title/] <span>[field:click/]次播放</span></div>
+                   <i class="icon-play7070" ></i>
+                   </a>
+                   {/dede:arclist}
+               </div>
+               
+                <div class="video_f1_left_3">
+                	<ul>
+                    {dede:arclist titlelen=100 row=4 noflag='c' orderby='id' typeid='22'}
+                      <li><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /><div class="video_f1_left_4">[field:title/]</div></a></li>
+                      {/dede:arclist}
+                    </ul>
+                 </div><!--video_f1_left_3-->
+                </div><!--video_f1_left_sp-->
+                
+             	<div class="video_f1_left_xq"><a href="/a/chuanmei/there/" target="_blank">缘来在这里 <i>更多>></i></a></div>
+                <div class="video_f1_left_5">
+                	<ul>
+                    	{dede:arclist titlelen=100 row=4 orderby='pubdate' typeid='23'}
+                    	<li class="video_f1_left_51"><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" /><div class="video_f1_left_6">[field:title/]</div></a></li>
+                        {/dede:arclist}
+                    </ul>
+                </div>
+                
+            </div><!--video_f1_left-->
+            
+        <div class="video_f1_right">
+            	<h3>热门视频推荐</h3>
+                <div class="clear"></div>
+            	<ul>
+                	{dede:arclist titlelen=100 row=5 orderby='click' typeid='11' subday='15' noflag='c'}
+                	<li>
+                    	<div class="chuanmei_fr_img2"><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /></a></div>
+                        <div class="chuanmei_fr_title2"><a href="[field:arcurl/]" target="_blank">[field:title/]</a></div>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+            </div><!--video_f1_right-->
+        </div><!--video_fl-->
+        
+    <div class="video_f2"><img src="/images/video_13.png" /></div>
+    
+    <div class="video_f3">
+    	<div class="video_f3_left">
+            <div class="video_f3_left_2">
+        	<div class="video_f3_left_1"><a href="/a/chuanmei/tj/" target="_blank">站外推荐 <i>更多>></i></a></div>
+       	    <ul class="video_f3_left_3">
+            	{dede:arclist titlelen=100 row=10 orderby='pubdate' typeid='24'}
+            	<li><a href="[field:arcurl/]" target="_blank"><img src="[field:litpic /]" alt="[field:title/]" /><div class="video_f3_left_31">[field:title/]</div></a></li>
+                {/dede:arclist}
+             </ul>
+       	   
+            </div><!--video_f3_left_3-->
+        </div><!--video_f3_left_2-->
+        
+    </div><!--video_f3-->
+    
+    <div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+
+</body>
+</html>

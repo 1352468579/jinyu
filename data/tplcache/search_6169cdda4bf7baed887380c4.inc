@@ -1,0 +1,170 @@
+<?php
+if(!isset($GLOBALS['_vars'])) $GLOBALS['_vars'] = array(); 
+$fields = array();
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>查找好友 - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<link href="/images/css/index.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/select.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/images/js/jquery.SuperSlide2.js"></script>
+<script type="text/javascript" src="/images/js/jquery.easydropdown.js"></script>
+</head>
+<body>
+
+<?php include(DEDEMEMBER."/templets/head.htm"); ?>
+  
+    <div class="w1150">
+        <div class="search_count">
+        	
+          <ul>
+          <form action="/member/search.php">
+              <input class="intxt" type='hidden' name='keyword' value=''/>
+              <li>
+              <select id="city" name="city" class="dropdown" data-settings='{"cutOff":8}'>
+              	<?php 
+                	if($_GET['city']!=''){
+                        echo "<option value='$_GET[city]' selected='selected'>$_GET[city]</option>";
+                    }
+                ?>
+              	<option value='成都市'>成都市</option>
+              	<option value='绵阳市'>绵阳市</option>
+              	<option value='重庆市'>重庆市</option>
+              	<option value='广州市'>广州市</option>
+              	<option value='北京市'>北京市</option>
+              	<option value='深圳市'>深圳市</option>
+              	<option value='杭州市'>杭州市</option>
+              	<option value='西安市'>西安市</option>
+              	<option value='武汉市'>武汉市</option>
+              	<option value='天津市'>天津市</option>
+              	<option value='上海市'>上海市</option>
+              	<option value='石家庄市'>石家庄市</option>
+              	<option value='郑州市'>郑州市</option>
+              	<option value='长沙市'>长沙市</option>
+              	<option value='南昌市'>南昌市</option>
+              	<option value='沈阳市'>沈阳市</option>
+              	<option value='长春市'>长春市</option>
+              	<option value='哈尔滨市'>哈尔滨市</option>
+              	<option value='太原市'>太原市</option>
+              	<option value='济南市'>济南市</option>
+              	<option value='西宁市'>西宁市</option>
+              	<option value='合肥市'>合肥市</option>
+              	<option value='海口市'>海口市</option>
+              	<option value='贵阳市'>贵阳市</option>
+              	<option value='福州市'>福州市</option>
+              	<option value='兰州市'>兰州市</option>
+              	<option value='昆明市'>昆明市</option>
+              	<option value='西藏'>西藏</option>
+              	<option value='宁夏'>宁夏</option>
+              	<option value='广西'>广西</option>
+              	<option value='新疆'>新疆</option>
+              	<option value='内蒙古'>内蒙古</option>
+              </select>
+              </li>
+              
+                        <input type="hidden" id="minage0" name="minage" value="<?php if($_GET['minage']==''){echo '20';}else{ echo $_GET['minage'];} ?>" />
+                        <input type="hidden" id="minage1" name="maxage" value="<?php if($_GET['maxage']==''){echo '25';}else{ echo $_GET['maxage'];} ?>" />
+                        
+                        <script type="text/javascript">
+							function getval(thisval){
+								var strs= new Array();
+								strs=thisval.split(",");
+								for (i=0;i<strs.length ;i++) 
+								{
+									document.getElementById("minage"+[i]).value=strs[i];
+								}
+							}
+                        </script>
+                        
+                        <li>
+                        <select tabindex="4" class="dropdown" data-settings='{"cutOff":8}' id="checkselect" onchange="getval(this.value)">
+                        	<option value="20,25" <?php if($_GET['minage']=='20'){echo 'selected="selected"';} ?>>20-25岁</option>
+                            <option value="25,30" <?php if($_GET['minage']=='25'){echo 'selected="selected"';} ?>>25-30岁</option>
+                            <option value="30,35" <?php if($_GET['minage']=='30'){echo 'selected="selected"';} ?>>30-35岁</option>
+                            <option value="35,40" <?php if($_GET['minage']=='35'){echo 'selected="selected"';} ?>>35-40岁</option>
+                            <option value="40,45" <?php if($_GET['minage']=='40'){echo 'selected="selected"';} ?>>40-45岁</option>
+                            <option value="45,50" <?php if($_GET['minage']=='45'){echo 'selected="selected"';} ?>>45-50岁</option>
+                            <option value="50,55" <?php if($_GET['minage']=='50'){echo 'selected="selected"';} ?>50-55岁</option>
+                            <option value="55,60" <?php if($_GET['minage']=='55'){echo 'selected="selected"';} ?>>55-60岁</option>
+                            <option value="60,65" <?php if($_GET['minage']=='60'){echo 'selected="selected"';} ?>>60-65岁</option>
+                            <option value="65,70" <?php if($_GET['minage']=='65'){echo 'selected="selected"';} ?>>65-70岁</option>
+                        </select>
+                        </li>
+
+              <li class="search_sex">
+              <select class="dropdown" name="sex">
+              	<?php 
+                	if($_GET['sex']!=''){
+                        echo "<option value='$_GET[sex]' selected='selected'>$_GET[sex]会员</option>";
+                    }
+                ?>
+                  <option value="男">男会员</option>
+                  <option value="女">女会员</option>
+              </select>
+              </li>
+              <input type="submit" name="search" class="search_count_button" value="搜 索" />
+            </form>
+        	</ul>
+             <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+	<div class="w1150">
+	<div class="search_jg">
+	<div class="vip">
+        	<ul>
+            
+            <?php
+$atts = array();
+$atts['tagname'] = 'datalist';
+$blockValue = $this->refObj->GetArcList($atts,$this->refObj,$fields); 
+if(is_array($blockValue)){
+foreach( $blockValue as $key=>$fields )
+{
+
+   			if(empty($fields['face'])) $face=($fields['sex']=='女')? 'templets/images/dfgirl.png' : 'templets/images/dfboy.png';
+            else $face=$fields['face'];
+    		$spaceurl = $cfg_basehost.'/member/index.php?uid='.$fields['userid'];
+    	?>
+
+            <li>
+            	<div class="con_vip_hidden">
+                    <a href="/member/index.php?uid=<?php echo $fields['userid']; ?>" target="_blank">
+                        <div class="con_vip_img"><img src="<?php echo $face ?>" alt="<?php echo $fields['uname']; ?>" /></div>
+                    </a>
+                    <div class="con_vip_zx">
+                        <a href="javascript:;" onclick="cdpopuptrigger2(-2,'<?php echo $fields['uname']; ?>','<?php echo $face ?>')"><span class="s-hi"><i></i>发私信</span></a>
+                        <b>|</b>
+                        <a href="javascript:;"><span class="l-wu"><i></i>送礼物</span></a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div class="con_vip_name"><a href="/member/index.php?uid=<?php echo $fields['userid']; ?>" target="_blank"><?php echo $fields['uname']; ?></a></div>
+                <div class="clear"></div>
+                <p>
+                    <i><?php echo $fields['birthday']; ?>岁 | <?php echo $fields['height']; ?>CM | <?php echo $fields['city']; ?></i>
+                </p>
+            </li>
+            <?php
+}
+}?>
+            </ul>
+    
+    </div>
+    <div class="clear"></div>
+    
+    </div>
+    
+    </div>
+    
+
+ <div class="clear"></div>
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<li><a href="/member/index.php?uid=[field:userid/]" class="hd_bm_list_img"><img src="[field:face/]" alt="[field:uname/]" /></a><a href="/member/index.php?uid=[field:userid/]" class="hd_bm_list_name">[field:uname/]</a><p><span>[field:birthday/]岁 | [field:height/]CM | [field:city/]</span></p><p><a href="">打招呼</a><a href="">关注他</a></p></li>

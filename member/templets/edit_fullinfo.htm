@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>更改详细资料 - 会员中心 -<?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript'src='templets/js/main.js'></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/face.js"></script>
+<script type="text/javascript" src="templets/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+      <script type="text/javascript" charset="utf-8" src="/images/js/PCASClass.js"></script>
+<script language='javascript'>
+	function msgSubmit(form) {
+		//var id=form.id.value;
+		var content = form.share_textarea.value;
+		if( content == '更换个性签名...' ) content = '';
+		if ( content == '' ) {
+			alert('请输入内容'); return false;
+		}
+		$.ajax({
+			type:'POST',
+			url:'index_do.php?fmdo=moodmsg&dopost=sendmsg',
+			cache:false,
+			data:'&content='+encodeURIComponent(content),
+			dataType:'json',
+			success:function(message){
+				if ( message.type == 'success' ) {
+					$('#share_textarea').val('');
+					$('#moodcontent').html(message.data);
+				} else {
+					alert(message.data);
+				}
+			}
+		});
+	}
+</script>
+</head>
+<body>
+   <?php include(DEDEMEMBER."/templets/head.htm"); ?>
+<div id="main">
+  <div id="content" class="w1000 clearfix">
+    <?php include(DEDEMEMBER."/templets/menu.php"); ?>
+    <div>
+    <div id="mcpmain">
+    <div id="appTab">
+        <ul>
+          <li><a href="edit_baseinfo.php">基本资料</a></li>
+          <li class="thisTab"><a href="edit_fullinfo.php">详细资料</a></li>
+          <li><a href="edit_face.php">头像设置</a></li>
+          <li><a href="edit_shiming.php">实名认证</a></li>
+        </ul>
+      </div>
+      
+    <div id="mainCp">
+        <h3 class="meTitle"><strong>详细资料</strong></h3>
+        <div class="postForm">
+        
+<!--      <div class="share">
+        <div class="share02">
+          <form target="hidden_frame" method="post" enctype="multipart/form-data" name="msgmood" action="#">
+            <input id="share_textarea" type="text" value="更换个性签名..." onclick="showFace()"/>
+            <button id="btn_submit" type="button" onclick="msgSubmit(this.form)">发表</button>
+          </form>
+        </div>
+      </div>
+-->      
+    <form method="post" action="edit_fullinfo.php" name="form1">
+      <input type="hidden" value="save" name="dopost"/>
+      <input type="hidden" value="<?php echo $membermodel->modid;?>" name="modid"/>
+
+      <p>
+        <label>目前所在地：</label>
+        <select name='province' id="province2"></select>
+
+        <select name="city" id="city2"></select>
+
+        <select name="area" id="area2"></select>
+        
+		<script type="text/javascript">
+			new PCAS("province","city","area","<?php echo $row[province]?>","<?php echo $row[city]?>","<?php echo $row[area]?>") ;
+        </script>
+        
+      </p>
+
+        <?php echo $postform;?>
+         <script>
+		 $(function() {
+			 $('#province').parent().parent().hide();
+			 $('#city').parent().parent().hide();
+			 $('#area').parent().parent().hide();
+		 })
+		 
+		 $("#province2").change(function(){
+			 document.getElementById("province").value=$(this).val();
+			 document.getElementById("city").value=$("#city2").val();
+		 });
+		 $("#city2").change(function(){
+			 document.getElementById("city").value=$("#city2").val();
+		 });
+		 $("#area2").change(function(){
+			 document.getElementById("area").value=$(this).val();
+		 });
+        </script>
+     <p>
+       <label>&nbsp;</label>
+          <button type="submit" id="btnSignCheck" class="buttonGreen142">完 成 </button>
+      </p>   
+    </div>
+    </div>
+     </form>
+     
+     <!--主操作区域 -->
+    </div>
+  </div>
+</div>
+
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+
+</body>
+</html>

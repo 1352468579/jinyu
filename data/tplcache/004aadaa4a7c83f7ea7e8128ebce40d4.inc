@@ -1,0 +1,1 @@
+[field:mid  function='face(@me)'/]

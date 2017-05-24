@@ -1,0 +1,42 @@
+<?php
+$z[0]=Array("field","",254,273);
+$z[0][4]['name']="title";
+$z[1]=Array("include","",543,580);
+$z[1][4]['filename']="header.htm";
+$z[2]=Array("field","",719,748);
+$z[2][4]['name']="position";
+$z[3]=Array("field","",749,768);
+$z[3][4]['name']="title";
+$z[4]=Array("field","",859,878);
+$z[4][4]['name']="title";
+$z[5]=Array("field","",999,1055);
+$z[5][4]['name']="pubdate";
+$z[5][4]['function']="MyDate('Y-m-d H:i',@me)";
+$z[6]=Array("field","",1101,1128);
+$z[6][4]['name']="phpurl";
+$z[7]=Array("field","",1152,1175);
+$z[7][4]['name']="id";
+$z[8]=Array("field","",1180,1204);
+$z[8][4]['name']="mid";
+$z[9]=Array("field","",1393,1411);
+$z[9][4]['name']="body";
+$z[10]=Array("field","",1664,1680);
+$z[10][4]['name']="id";
+$z[11]=Array("field","",1685,1721);
+$z[11][4]['name']="id";
+$z[11][4]['function']="zan(@me)";
+$z[12]=Array("arclist","\r\n                	<li>\r\n                    	<a href=\"[field:arcurl/]\">\r\n                        	<div class=\"pic_box\"><img src=\"[field:litpic /]\" /></div>\r\n                            <div class=\"info_box\">\r\n                            	<div class=\"ktj_title\">[field:title/]</div>\r\n                            	<div class=\"ktj_info\">[field:description/] ....</div>\r\n                            </div>\r\n                        </a>\r\n                    </li>\r\n                    ",2545,3100);
+$z[12][4]['titlelen']="100";
+$z[12][4]['row']="5";
+$z[12][4]['orderby']="rand";
+$z[12][4]['typeid']="6";
+$z[13]=Array("arclist","\r\n                	<li>\r\n                    	<div class=\"kt_newright2_img\"><a href=\"[field:arcurl/]\"><img src=\"[field:litpic /]\" alt=\"[field:title/]\" /></a></div>\r\n                        <div class=\"kt_newright2_title\"><a href=\"[field:arcurl/]\">[field:title/]</a></div>\r\n                        <div class=\"kt_newright2_info\">[field:info/]</div>\r\n                    </li>\r\n                    ",4303,4785);
+$z[13][4]['titlelen']="100";
+$z[13][4]['row']="5";
+$z[13][4]['orderby']="click";
+$z[13][4]['typeid']="6";
+$z[13][4]['subday']="7";
+$z[14]=Array("include","",6084,6121);
+$z[14][4]['filename']="footer.htm";
+
+?>

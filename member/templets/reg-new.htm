@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title><?php echo $cfg_webname; ?>- 会员注册</title>
+<link href="templets/style/login.css" rel="stylesheet" type="text/css" />
+<script src="templets/js/j.js" language="javascript" type="text/javascript"></script>
+<script src="templets/js/base.js" language="javascript" type="text/javascript"></script>
+<script src='templets/js/CheckPassStrength.js' type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript" src='templets/js/reg_new.js'></script>
+<script type="text/javascript" language="javascript">
+<!--
+var reMethod = "<?php echo ($cfg_soft_lang == 'utf-8') ? 'POST' : 'GET';?>",pwdmin = <?php echo $cfg_mb_pwdmin; ?>;
+
+function changeAuthCode() {
+	var num = 	new Date().getTime();
+	var rand = Math.round(Math.random() * 10000);
+	num = num + rand;
+	$('#ver_code').css('visibility','visible');
+	if ($("#vdimgck")[0]) {
+		$("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+	}
+	return false;	
+}
+
+function hideVc()
+{
+	$('#ver_code').css('visibility','hidden');
+}
+
+
+$(document).ready(function(){ 
+	$("#passwordLevel").removeClass().addClass("rank r0");
+	$("#vdcode").focus(function(){
+	  var leftpos = $("#vdcode").position().left;
+	  var toppos = $("#vdcode").position().top - 42;
+	  $('#ver_code').css('left', leftpos+'px');
+	  $('#ver_code').css('top', toppos+'px');
+	  $('#ver_code').css('visibility','visible');
+	});
+	$("input[type='password']").click(function(){
+	  hideVc()
+	});
+	$("#txtUsername").click(function(){
+	  hideVc()
+	});
+	$("input[type='radio']").focus(function(){
+	  hideVc()
+	});
+	/*
+	$("#vdcode").blur(function(){
+		  $('#ver_code').css('visibility','hidden');
+	});
+	*/
+})
+
+-->
+</script>
+</head>
+<body>
+
+<?php include(DEDEMEMBER."/templets/header.htm"); ?>
+
+<div class="wrapper"><div class="logotext">注册只需一小步，终身幸福一大步</div></div>
+
+<div id="login" class="bor" >
+
+  <div class="theme fLeft">
+    <form method="post" action="reg_new.php" id="regUser" name="form2">
+      <input type="hidden" value="regbase" name="dopost"/>
+      <input type="hidden" value="1" name="step"/>
+      <input type="hidden" value="个人" name="mtype"/>
+      <p style="text-align: right;" class="mt10"/>
+      <ul>
+        <li style="display:none"><span>帐号类型：</span>
+         <?php
+         if(!file_exists(DEDEDATA.'/cache/member_model.inc'))
+         {
+         	   $dsql->SetQuery("SELECT * FROM `#@__member_model` WHERE state='1'");
+	           $dsql->Execute();
+	           while($row=$dsql->GetObject())
+	           {
+		             $_MemberMod[$row->id]=array($row->name,$row->table);
+           	 }
+          } else {
+           	     require_once DEDEDATA.'/cache/member_model.inc';
+          }
+            foreach ($_MemberMod as $type)
+            {
+                if($type[0] == '个人') echo ' <label><input type="radio" name="mtype" class="usermtype" value="'.$type[0].'" checked/>';
+                elseif($type[0] == '企业') echo ' <label><input type="radio" name="mtype" class="usermtype2" value="'.$type[0].'" />';
+                else echo ' <label><input type="radio" name="mtype" class="usermtype" value="'.$type[0].'" />';
+                echo $type[0], '</label> &nbsp;';
+            }
+        ?>
+        </li>
+        <li><span>用户名：</span>
+          <input type="text" class="intxt w250" id="txtUsername" name="userid"/>
+        <i class="red">*</i> <em id="_userid"></em> </li>
+        <li><span id="uwname">昵 称：</span>
+          <input type="text" class="intxt w250" size="20" id="uname" name="uname"/>
+          <i class="red">*</i> <em id="_uname"/> </li>
+        <li><span>登陆密码：</span>
+          <input type="password" onkeyup="setPasswordLevel(this, document.getElementById('passwordLevel'));" style="font-family: verdana;" class="intxt w250" id="txtPassword" name="userpwd"/>
+          <i class="red">*</i> </li>
+        <li><span>确认密码：</span>
+          <input type="password" class="intxt w250" size="20" value="" id="userpwdok" name="userpwdok"/>
+          <i class="red">*</i> <em id="_userpwdok"><font color="red"><b>×两次输入密码不一致</b></font></em> </li>
+          <?php
+            if($safe_faq_reg == '1'){
+            $faqkey = array_rand($safefaqs);
+          ?>
+          <li><span>请回答注册问题：</span>
+      	  <p class="cellBg">
+            <?php echo $safefaqs[$faqkey]['question'];?> (答案:<?php echo $safefaqs[$faqkey]['answer'];?>)
+           </li>
+          <li><span>您的回答是：</span>
+            <input name="rsafeanswer" type="text" id="rsafeanswer" size="25" style='width:200px;' class="intxt w200"/> 
+            <input type="hidden" name="faqkey" value="<?php echo $faqkey;?>" />
+            <i class="red">*</i> </li>
+          <?php
+          	}
+          ?>
+          <li><span>电子邮箱：</span>
+            <input type="text" class="intxt w250" id="email" name="email"/>
+            <i class="red">*</i> <em id="_email">(每个邮箱只能注册一个帐号)</em> </li>
+        <li><span>性别：</span>
+            <input type="radio" value="男" name="sex" checked="checked"/>
+            男
+        <input type="radio" value="女" name="sex"/>
+            女
+            <input type="radio" value="" name="sex"/>
+          保密        </li>
+          <?php
+            if(preg_match("/1/",$safe_gdopen)){
+          ?>
+          <li><span>验证码：</span>
+            <input type="text" class="intxt w250" style="width:100px; text-transform: uppercase;" id="vdcode" name="vdcode"/><img id="vdimgck" align="absmiddle" onclick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
+          </li>
+           <?php }?>
+      </ul>
+      
+      <div><span class="fLeft">会员注册协议：</span><input type="checkbox" checked="" value="" id="agree" name="agree"/>我已阅读并完全接受<a href="" target="_blank">服务协议</a>
+      </div>
+      
+      <ul>
+        <p style="height:25px;"></p>
+		<li><span>&nbsp;</span>
+          <button type="submit" id="btnSignCheck" class="buttonGreen142">完 善 信 息</button>
+        </li>
+      </ul>
+      
+    </form>
+  </div>
+  
+  
+  <div class="login_sidebar fRight">
+    <p><span>已有会员账号</span><br />已经注册本站会员，点击登陆<br />马上开始您的有缘之旅。</p>
+    <button class="signUp" onclick="javascript:location='/member/index.php'">登陆</button>
+  </div>
+
+  <br class="clear"/>
+</div>
+
+<?php include(DEDEMEMBER."/templets/foot.htm"); ?>
+
+
+</body>
+</html>

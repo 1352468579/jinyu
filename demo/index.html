@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘首页</title>
+<link href="./images/css/index.css" type="text/css" rel="stylesheet" />
+<link href="./images/css/select.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="./images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="./images/js/jquery.SuperSlide2.js"></script>
+<script type="text/javascript" src="./images/js/jquery.easydropdown.js"></script>
+</head>
+
+<body>
+
+	<div class="header">
+        
+        <div class="top_text">
+        	<div class="w1150">
+                <div class="fl">欢迎访问金玉良缘婚恋网！ 服务时间（无假日）09:30-17:30</div>
+                <div class="fr"><a href=""><em class="ico_phone"></em>移动版</a> <i>|</i> <a href="" class="cd-popup-trigger0"><em class="ico_wechat"></em>关注微信</a> <i>|</i> <a href="">在线咨询</a></div>
+            </div>
+            
+            <div class="cd-popup">
+                <div class="cd-popup-container">
+                    <p>关注金玉良缘公众号</p>
+                    <div class="clear"></div>
+                    <div class="cd-buttons">
+                        <img src="./images/ewm.jpg" width="200" /><br />微信扫一扫，关注领取红包！
+                    </div>
+                    <a href="#0" class="cd-popup-close">close</a>
+                </div>
+            </div>
+
+			<script type="text/javascript">
+                jQuery(document).ready(function($){
+					//打开窗口
+					$('.cd-popup-trigger0').on('click', function(event){
+						event.preventDefault();
+						$('.cd-popup').addClass('is-visible');
+						//$(".dialog-addquxiao").hide()
+					});
+					//关闭窗口
+					$('.cd-popup').on('click', function(event){
+						if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+							event.preventDefault();
+							$(this).removeClass('is-visible');
+						}
+					});
+					//ESC关闭
+					$(document).keyup(function(event){
+						if(event.which=='27'){
+							$('.cd-popup').removeClass('is-visible');
+						}
+					});
+				});
+			</script>
+
+        </div>
+        
+        <div class="clear"></div>
+    
+    	<div class="w1150">
+            <div class="logo">
+            	<h1><a href="/">金玉良缘网</a></h1>
+                <div class="city">
+                    <form><select><option>成都</option></select></form>
+                </div>
+            </div>
+            
+            <div class="main">
+            	<ul>
+                	<li><a href="./index.html">首页</a></li>
+                	<li><a href="./hongn.html">红娘服务</a></li>
+                	<li><a href="./ketang.html">婚恋课堂</a></li>
+                	<li><a href="./mendian.html">直营门店</a></li>
+                	<li><a href="./huodong.html">相亲活动</a></li>
+                	<li><a href="./about.html">关于我们</a></li>
+                	<li><a href="./lover.html">秀恩爱</a></li>
+                	<li><a href="./video.html">金玉传媒<i class="main-new"></i></a></li>
+                	<li><a href="">情感专家<i class="main-hot"></i></a></li>
+                </ul>
+            </div>
+            <div class="call">红娘热线：028-86145520</div>
+        </div>
+    </div>
+    
+    <div class="w1150">
+        <div class="indexreg">
+            <div class="checkreg"><i class="hover" id="two1" onmouseover="setContentTab('two',1,2)">注册</i><i id="two2" onmouseover="setContentTab('two',2,2)">登陆</i></div>
+            <div class="clear"></div>
+            
+            <div class="pd15" id="con_two_1">
+                <div class="reginfo">注册一秒 幸福一生</div>
+                <div class="userpass">
+                    <form>
+                        <p><b>账 号</b><input type="text" name="username" class="textreg" onkeyup="STip(this.value, event);" value="手机号/邮箱" onFocus="if(this.value=='手机号/邮箱'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='手机号/邮箱'"  /></p>
+                        <p><b>密 码</b><input type="text" name="password" class="textreg" value="密码" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';}"/></p>
+                        <div class="xieyi"><input type="checkbox" name="xieyi" checked="checked" />已经阅读并同意<i>服务条款</i> <a href="">忘记密码？</a></div>
+                        <input type="submit" name="submit" value="免费注册" class="submit" />
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pd15 dinone" id="con_two_2">
+                <div class="reginfo">立即登陆 寻找缘分</div>
+                
+                <div class="userpass">
+                    <form>
+                        <p><b>账 号</b><input type="text" name="username" class="textreg" onkeyup="STip(this.value, event);" value="手机号/邮箱" onFocus="if(this.value=='手机号/邮箱'){this.value='';}else{this.value=this.value;}" onBlur="if(this.value=='')this.value='手机号/邮箱'"  /></p>
+                        <p><b>密 码</b><input type="text" name="password" class="textreg" value="密码" onfocus="if(this.value==defaultValue) {this.value='';this.type='password'}" onblur="if(!value) {value=defaultValue; this.type='text';}"/></p>
+                        <div class="xieyi"><input type="checkbox" name="xieyi" checked="checked" />已经阅读并同意<i>服务条款</i> <a href="">忘记密码？</a></div>
+                        <input type="submit" name="submit" value="马上登陆" class="submit" />
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+	<script type="text/javascript">
+		function setContentTab(name, curr, n) {
+			for (i = 1; i <= n; i++) {
+				var menu = document.getElementById(name + i);
+				var cont = document.getElementById("con_" + name + "_" + i);
+				menu.className = i == curr ? "hover" : "";
+				if (i == curr) {
+					cont.style.display = "block";
+				} else {
+					cont.style.display = "none";
+				}
+			}
+		}
+    </script>
+    
+    <div class="flexslider" id="banner_tabs">
+    	
+        <ul class="slides">
+            <li><a href="#" style="background: url(./images/indexbanner.jpg) no-repeat center;"></a></li>
+            <li><a href="#" style="background: url(./images/indexbanner.jpg) no-repeat center;"></a></li>
+            <li><a href="#" style="background: url(./images/indexbanner.jpg) no-repeat center;"></a></li>
+        </ul>
+        
+        <ul class="flex-direction-nav">
+            <li><a class="flex-prev" href="javascript:;">上一张</a></li>
+            <li><a class="flex-next" href="javascript:;">下一站</a></li>
+        </ul>
+        
+        <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+            <li class="active"><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>3</a></li>
+        </ol>
+
+		<script type="text/javascript" src="./images/js/slider.js"></script>
+		<script type="text/javascript">
+        $(function() {
+            var bannerSlider = new Slider($('#banner_tabs'), {
+                time: 5000,
+                delay: 400,
+                event: 'hover',
+                auto: true,
+                mode: 'fade',
+                controller: $('#bannerCtrl'),
+                activeControllerCls: 'active'
+            });
+            $('#banner_tabs .flex-prev').click(function() {
+                bannerSlider.prev()
+            });
+            $('#banner_tabs .flex-next').click(function() {
+                bannerSlider.next()
+            });
+        })
+        </script>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="bgclor1">
+    
+    <div class="w1150">
+        <div class="partTit">
+            <p>
+                <span class="titspan1">
+                    <em class="ft31">时光正好 我们恋爱吧</em>
+                    <i class="eng">2000万注册会员，给您万里挑一的机会</i>
+                </span>
+            </p>
+        </div>
+    	<div class="clear"></div>
+        <div class="tab_sx">
+            <ul>
+                <li><a href="" class="hover" id="vip1" onmouseover="setContentTab('vip',1,5)">优质会员</a></li>
+                <li><a href="" id="vip2" onmouseover="setContentTab('vip',2,5)">优质会员</a></li>
+                <li><a href="" id="vip3" onmouseover="setContentTab('vip',3,5)">优质会员</a></li>
+                <li><a href="" id="vip4" onmouseover="setContentTab('vip',4,5)">优质会员</a></li>
+                <li><a href="" id="vip5" onmouseover="setContentTab('vip',5,5)">优质会员</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="vip">
+    	<div class="w1150">
+        	<ul id="con_vip_1">
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v2" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v3" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v4" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v5" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            </ul>
+            
+        	<ul id="con_vip_2" class="dinone">
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            </ul>
+        	<ul id="con_vip_3" class="dinone">
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            </ul>
+        	<ul id="con_vip_4" class="dinone">
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            </ul>
+        	<ul id="con_vip_5" class="dinone">
+            	<li><a href=""><img src="./images/toux_03.jpg" width="168" height="168" /><p><b>刘财</b><i>21岁 178CM</i><em title="点击对话">对话</em><br /><span>阿斯蒂芬撒旦法爱的色放阿斯蒂芬阿斯蒂芬...</span></p></a><i class="viplv v1" title="VIP1会员"></i></li>
+                
+            </ul>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="checkmore"><a href="">查看更多</a></div>
+    
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="search">
+    	<div class="w1150">
+            <div class="serachwd">
+                <div class="search_ico"><i></i>搜索网站更多优质会员</div>
+                <ul>
+                    <form>
+                        <li class="search_sex"><select tabindex="4" class="dropdown"><option>男会员</option><option>女会员</option></select></li>
+                        <li class="search_age"><select tabindex="4" class="dropdown"><option>20岁</option><option>21岁</option></select></li>
+                        <li class="search_loca"><select tabindex="4" class="dropdown"><option>成都</option><option>绵阳</option></select></li>
+                        <li class="search_submit"><input type="submit" name="search" value="搜 索" /></li>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+	<div class="indexActive">
+
+        <div class="partTit">
+            <p class="titp1">
+                <span class="titspan3">
+                    <em class="ft32">线下交友活动</em>
+                    <i class="eng2">零距离接触亲密约会，寻找有缘的那个TA</i>
+                </span>
+            </p>
+        </div>
+
+
+        <div class="picScroll">
+            <div class="tempWrap" style="overflow:hidden; position:relative; width:960px">
+            
+            <ul style="width: 3200px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: 0px;">
+            <li>
+                <dl>
+                    <dt>
+                        <a href="" target="_blank" onclick="">
+                        <img src="http://pic1.vip.baihe.com/upfiles/vipmanage/active/1467354358894.png" height="150" width="300">
+                        </a>
+                        <span class="enterNow">正在报名</span>
+                    </dt>
+                    <dd>
+                        <h4>线下情感沙龙-红娘服务初体验</h4>
+                        <p class="picScroll-p"><span>成都</span><span>长期有效</span><span>2188人已报名</span></p>
+                        <a href="">立即报名</a>
+                    </dd>
+                </dl>
+            </li>
+            
+            <li style="float: left; width: 300px;">
+                <dl>
+                    <dt>
+                        <a href="activity_details.html?hdId=81">
+                        <img src="http://pic1.vip.baihe.com/upfiles/vipmanage/active/1467109720964.jpg" height="150" width="300">
+                        </a>
+                        <span class="enterNow">正在报名</span>
+                    </dt>
+                    
+                    <dd>
+                        <h4>到店有惊喜-百合实体店诚邀您的...</h4>
+                        <p class="picScroll-p"><span>绵阳</span><span>13号截至</span><span>2252人已报名</span></p>
+                        <a href="">立即报名</a>
+                    </dd>
+                </dl>
+            </li>
+            <li style="float: left; width: 300px;">
+                <dl>
+                    <dt>
+                        <a href="activity_details.html?hdId=81">
+                        <img src="http://pic1.vip.baihe.com/upfiles/vipmanage/active/1467109720964.jpg" height="150" width="300">
+                        </a>
+                        <span class="enterStop">活动截至</span>
+                    </dt>
+                    
+                    <dd>
+                        <h4>到店有惊喜-百合实体店诚邀您的...</h4>
+                        <p class="picScroll-p"><span>全国</span><span>长期有效</span><span>2252人已报名</span></p>
+                        <a href="">立即报名</a>
+                    </dd>
+                </dl>
+            </li>
+            <li style="float: left; width: 300px;">
+                <dl>
+                    <dt>
+                        <a href="activity_details.html?hdId=81">
+                        <img src="http://pic1.vip.baihe.com/upfiles/vipmanage/active/1467109720964.jpg" height="150" width="300">
+                        </a>
+                        <span class="enterStop">活动截至</span>
+                    </dt>
+                    
+                    <dd>
+                        <h4>到店有惊喜-百合实体店诚邀您的...</h4>
+                        <p class="picScroll-p"><span>全国</span><span>长期有效</span><span>2252人已报名</span></p>
+                        <a href="">立即报名</a>
+                    </dd>
+                </dl>
+            </li>
+            </ul>
+            
+            </div>
+            
+            <a class="prev prevStop"></a>						
+            <a class="next"></a>
+        </div>
+        <a href="activity_list.html" id="indexActive-more">更多</a>		
+	</div>
+    
+    <script type="text/javascript">
+    	jQuery(".picScroll").slide({ mainCell:"ul",autoPlay:false,effect:"left", vis:3, scroll:1, autoPage:true, pnLoop:false });
+    </script>
+    
+    <div class="clear"></div>
+    
+    <div class="bgclor1">
+        <div class="w1150">
+            <div class="partTit">
+                <p>
+                    <span class="titspan1">
+                        <em class="ft31">金玉红娘 缔结良缘</em>
+                        <i class="eng">会员实名制，红娘一对一服务，为您量身匹配另一半</i>
+                    </span>
+                </p>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="hongn">
+                <ul>
+                    <li>
+                        <div class="hn_tx"><a href=""><img src="./images/hn_07.jpg" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="">陈老师</a><i>首席婚恋顾问</i><p>爱情是两个人的嬉笑怒骂材米油盐。</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>6年</i><br />成功配对: <i>388对</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="" class="hn_zx1">详细资料</a><a href="" class="hn_zx2">求配对</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hn_tx"><a href=""><img src="./images/hn_07.jpg" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="">陈老师</a><i>首席婚恋顾问</i><p>爱情是两个人的嬉笑怒骂材米油盐。</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>6年</i><br />成功配对: <i>388对</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="" class="hn_zx1">详细资料</a><a href="" class="hn_zx2">求配对</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hn_tx"><a href=""><img src="./images/hn_07.jpg" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="">陈老师</a><i>首席婚恋顾问</i><p>爱情是两个人的嬉笑怒骂材米油盐。</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>6年</i><br />成功配对: <i>388对</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="" class="hn_zx1">详细资料</a><a href="" class="hn_zx2">求配对</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hn_tx"><a href=""><img src="./images/hn_07.jpg" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="">陈老师</a><i>首席婚恋顾问</i><p>爱情是两个人的嬉笑怒骂材米油盐。</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>6年</i><br />成功配对: <i>388对</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="" class="hn_zx1">详细资料</a><a href="" class="hn_zx2">求配对</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hn_tx"><a href=""><img src="./images/hn_07.jpg" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="">陈老师</a><i>首席婚恋顾问</i><p>爱情是两个人的嬉笑怒骂材米油盐。</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>6年</i><br />成功配对: <i>388对</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="" class="hn_zx1">详细资料</a><a href="" class="hn_zx2">求配对</a></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hn_tx"><a href=""><img src="./images/hn_07.jpg" /></a></div>
+                        
+                        <div class="hn_fl">
+                        <div class="hn_name"><a href="">陈老师</a><i>首席婚恋顾问</i><p>爱情是两个人的嬉笑怒骂材米油盐。</p></div>
+                        <div class="clear"></div>
+                        <div class="hn_info">从业经验: <i>6年</i><br />成功配对: <i>388对</i></div>
+                        <div class="clear"></div>
+                        <div class="hn_zx"><a href="" class="hn_zx1">详细资料</a><a href="" class="hn_zx2">求配对</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+    
+            <div class="clear"></div>
+            
+            <div class="checkmore"><a href="">查看更多</a></div>
+            
+            <div class="clear"></div>
+
+        </div><!--W1150-->
+    </div><!--BG-->
+    
+    <div class="clear"></div>
+    
+    <div class="w1150">
+    	<div class="media">
+        	<div class="media_h1">金玉传媒<i></i></div>
+        	<div class="media_c">
+            	<a href="">
+                	<img src="./images/media_11.jpg" />
+                    <p><i></i>【需要你小美兮】2被逼着画眉毛居然被男神夸奖 </p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hlclass">
+        	<div class="hlclass_h1">婚恋课堂 <a href="">更多>></a></div>
+            <div class="hlclass_c">
+            	<ul>
+                	<li>
+                    	<a href=""><div class="hlclass_i"><img src="./images/media_14.jpg" /></div><p>女生最讨厌哪种追求方式</p></a>
+                    </li>
+                	<li>
+                    	<a href=""><div class="hlclass_i"><img src="./images/media_14.jpg" /></div><p>女生最讨厌哪种追求方式</p></a>
+                    </li>
+                	<li>
+                    	<a href=""><div class="hlclass_i"><img src="./images/media_14.jpg" /></div><p>女生最讨厌哪种追求方式</p></a>
+                    </li>
+                	<li>
+                    	<a href=""><div class="hlclass_i"><img src="./images/media_14.jpg" /></div><p>女生最讨厌哪种追求方式</p></a>
+                    </li>
+                	<li>
+                    	<a href=""><div class="hlclass_i"><img src="./images/media_14.jpg" /></div><p>女生最讨厌哪种追求方式</p></a>
+                    </li>
+                	<li>
+                    	<a href=""><div class="hlclass_i"><img src="./images/media_14.jpg" /></div><p>女生最讨厌哪种追求方式</p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    
+    </div><!--W1150-->
+    
+    <div class="clear"></div>
+    
+    <div class="bgclor1">
+        <div class="lover_w">
+        	<div class="lover">
+            	<div class="lover_h1"><i></i><b>他们相爱啦！</b> 已经有 <em>1</em><em>6</em><em>8</em><em>2</em><em>0</em><em>3</em><em>8</em>人在<span>金玉良缘</span>找到了另一半</div>
+            
+                <div class="clear"></div>
+            
+                <div class="lover_c">
+                    <div class="lover_cl">
+                        <ul>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lover_cl2">
+                        <a href=""><img src="./images/lover_03.jpg" /></a>
+                    </div>
+                    
+                    <div class="lover_cl3">
+                        <ul>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="lover_cl2">
+                        <a href=""><img src="./images/lover_03.jpg" /></a>
+                    </div>
+
+                    <div class="lover_cl">
+                        <ul>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                            <li><a href=""><img src="./images/lover_06.jpg" /></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="about">
+    	<div class="w1150">
+        	<div class="about_h1">
+            	专业金牌红娘，打造全国线下直营高端婚恋品牌
+            </div>
+            
+            <div class="clear"></div>
+            
+        	<div class="about_c">
+            	<div class="about_c1">
+                	<p><b>目前，网站注册会员高达<i>2000</i>万</b></p>
+                    <p>已有<i>100000</i>多单身男女通过金玉良缘找到了自己的幸福</p>
+                    <p>金牌红娘强大团队<i>500</i>余人，举办大小活动<i>3000</i>余场</p>
+                    
+                    <div class="clear"></div>
+                    
+                    <div class="about_c2">
+                        <ul>
+                            <li><p><img src="./images/about_17.png" /><br />男会员占比</p></li>
+                            <li><p><img src="./images/about_19.png" /><br />女会员占比</p></li>
+                            <li><p><img src="./images/about_21.png" /><br />配对成功率</p></li>
+                        </ul>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="houban">
+    	<div class="w1150">
+            <div class="huoban_h1"><b>合作伙伴</b><p>金玉良缘网凭借优质的服务，良好的品牌，赢得了在内的国内外主流媒、各级政府部门一致肯定</p></div>
+            <div class="huoban_c">
+                <ul>
+                    <li><img src="./images/huoban_28.jpg" /></li>
+                    <li><img src="./images/huoban_30.jpg" /></li>
+                    <li><img src="./images/huoban_32.jpg" /></li>
+                    <li><img src="./images/huoban_34.jpg" /></li>
+                    <li><img src="./images/huoban_36.jpg" /></li>
+                    <li><img src="./images/huoban_38.jpg" /></li>
+                    <li><img src="./images/huoban_40.jpg" /></li>
+                    <li><img src="./images/huoban_42.jpg" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="foot_reg">
+    	<div class="foot_wd">
+        	<div class="foot_h1">免费相亲 金玉良缘</div>
+            <div class="foot_c">
+            	<a href="" class="hover">在线咨询</a><a href="">登陆</a><a href="">注册</a>
+            </div>
+            <div class="clear"></div>
+            <div class="foot_call">红娘热线：028-86145520</div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="footer">
+    	<div class="footer1">
+            <a href="">联系客服</a>
+            <a href="">关于我们</a>
+            <a href="">网站地图</a>
+            <a href="">联系我们</a>
+            <a href="">注册条款</a>
+            <a href="">友情链接</a>
+            <a href="">招聘信息</a>
+            <a href="">意见反馈</a>
+            <a href="">隐私保护</a>
+            <a href="">帮助中心</a>
+            <a href="">交友须知</a>
+            <p>金玉良缘网是一个面向高素质单身人士的专业婚恋服务平台，在国内拥有多家股份公司的雄厚背景。</p>
+            <span>CopyRight 2017 蜀ICP备15018437号-1  地址：成都市青羊区西御街西御大厦A座25楼</span>
+        </div>
+    	<div class="footer2"><img src="./images/xy_53.jpg" /></div>
+    </div>
+    
+</body>
+</html>

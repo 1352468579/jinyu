@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/images/js/jquery.SuperSlide.2.1.1.js"></script>
+<script type="text/javascript" src="/images/js/newsdetail.js"></script>
+<style type="text/css">
+/*图片轮播*/
+.detail_context_pic{width:600px;margin-top:20px;margin-bottom:10px;overflow:hidden;}
+.detail_context_pic_top{width:600px;overflow:hidden;text-align:center;position:relative;z-index:1;}
+.detail_context_pic_bot{width:600px;height:107px;overflow:hidden;margin-top:10px;}
+
+.detail_picbot_mid{float:left;width:600px;border-top:1px solid #dddddd;border-bottom:1px solid #dddddd;height:70px;overflow:hidden;padding-top:5px;padding-bottom:5px;}
+.detail_picbot_mid ul{height:70px;width:600px;overflow:hidden;position:relative;}
+.detail_picbot_mid ul li{float:left;height:70px;display:inline;width:100px;text-align:center;overflow:hidden;position:relative;}
+.detail_picbot_mid ul li img{height:60px;width:80px;}
+
+#pic1{max-width:600px;}
+.selectpic{border:2px solid red;}
+.detail_picbot_right{float:left;width:30px;height:107px;overflow:hidden;}
+.detail_picbot_right a{display:block;width:30px;height:107px;}
+#preArrow{left:0px;}
+#nextArrow{right:0px;}
+.contextDiv{cursor:pointer;height:100%;width:50%;position:absolute;top:0px;z-index:5;background:url("blank") repeat;}
+.contextDiv span{position:absolute;top:50%;margin-top:-20%;width:39px;height:50px;}
+#preArrow_A{left:16px;background:url('/images/pic_left.png') 0px 0px no-repeat;display:none;}
+#nextArrow_A{right:16px;background:url('/images/pic_right.png') 0px 0px no-repeat;display:none;}
+</style>
+</head>
+
+<body>
+
+
+<div class="detail_context_pic">
+	<div class="detail_context_pic_top">
+		<a href="#"><img src="" alt="" id="pic1" curindex="0" /></a>
+        <a id="preArrow" href="javascript:void(0)" class="contextDiv" title="上一张"><span id="preArrow_A"></span></a>
+        <a id="nextArrow" href="javascript:void(0)" class="contextDiv" title="上一张"><span id="nextArrow_A"></span></a> 
+	</div>
+    
+	<div class="detail_context_pic_bot">
+		<div class="detail_picbot_mid">
+			<ul>
+            
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='/uploads/weiquanzi/f62336b0-8b5e-4c5d-a64d-f3d93d06ed30.jpg' bigimg='/uploads/weiquanzi/f62336b0-8b5e-4c5d-a64d-f3d93d06ed30.jpg' />
+                </a>
+                </li>
+
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/dace14a2-7f7a-4e83-92c1-a27b632d29de.jpg' bigimg='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/dace14a2-7f7a-4e83-92c1-a27b632d29de.jpg' />
+                </a>
+                </li>
+
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='/uploads/weiquanzi/1493864501363.jpg' bigimg='/uploads/weiquanzi/1493864501363.jpg' />
+                </a>
+                </li>
+
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/2a78a673-78ed-4693-9a5f-80ad655ecb6b.jpg' bigimg='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/2a78a673-78ed-4693-9a5f-80ad655ecb6b.jpg' />
+                </a>
+                </li>
+
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/fed60aaa-91f4-4d73-84af-7d95e985edf0.jpg' bigimg='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/fed60aaa-91f4-4d73-84af-7d95e985edf0.jpg' />
+                </a>
+                </li>
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='/uploads/weiquanzi/f62336b0-8b5e-4c5d-a64d-f3d93d06ed30.jpg' bigimg='/uploads/weiquanzi/f62336b0-8b5e-4c5d-a64d-f3d93d06ed30.jpg' />
+                </a>
+                </li>
+
+				<li>
+                <a href='javascript:void(0);'>
+                <img src='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/dace14a2-7f7a-4e83-92c1-a27b632d29de.jpg' bigimg='http://demo.sc.chinaz.com/Files/DownLoad/webjs1/201408/jiaoben2683/images/dace14a2-7f7a-4e83-92c1-a27b632d29de.jpg' />
+                </a>
+                </li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.typename/}_金玉良缘网</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/images/js/mootools-core.js"></script>
+<script type="text/javascript" src="/images/js/mediabox.js"></script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+    
+    <div class="clear"></div>
+    
+    <div class="zhiyin1" style="background:url(/images/{dede:field.keywords /}) center no-repeat;" >
+    	<div class="w1150">
+        	<div class="zhiyin1-tx"><img src="/images/{dede:field.seotitle /}" width="150" /></div>
+        	<div class="zhiyin1-title"><h1>{dede:field.typename/}</h1></div>
+        	<div class="zhiyin1-info">{dede:field.description/}</div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+    <div class="w1150">
+    	<div class="zhiyin1-zx">
+        	<a href="/call.html" target="_blank" class="fl">在线咨询</a><a href="#maps" class="fr">到这里去</a>
+        </div>
+        
+        <div class="clear"></div>
+        
+        <div class="zhiyin1-about">
+            <div class="partTit">
+                <p><span class="titspan1"><em class="ft31">关于我们</em></span></p>
+            </div>
+                
+            <div class="clear"></div>
+            
+            <div class="zhiyin1-about2">
+                <img src="/images/{dede:field.temparticle/}" alt="{dede:field.typename/}" />
+            </div>
+            
+            <div class="zhiyin1-about4">
+                {dede:field.content/}
+            </div>
+                
+            <div class="clear"></div>
+            
+            <div class="partTit">
+                <p><span class="titspan1"><em class="ft31">红娘服务</em></span></p>
+            </div>
+
+            <div class="clear"></div>
+            
+            <div class="zhiyin1-hongniang">
+                <ul>
+                	{dede:sql sql='select ar.id,ar.title,ar.litpic,ad.aid,ad.jingyan,ad.zhiwei,ad.jieshao,ad.linian,ad.haoping,ad.anli from dede_arctype a left join dede_addon17 ad on a.typename=ad.gongsi left join dede_archives ar on ad.aid=ar.id where ad.gongsi=~typename~ ORDER BY  `ad`.`aid` ASC LIMIT 0,30'}
+                    
+                	<li><div class="hn_list_img"><a href="javascript:;" onclick="cdpopuptrigger([field:id/])"><img src="[field:litpic/]" alt="[field:title/]" /><p class="hn_list_p"><b>[field:title/]</b><br />[field:zhiwei/]/[field:jingyan/]经验</p></a><a href="/call.html" target="_blank" class="hn_zxbtn" title="在线咨询红娘">咨询红娘</a></div>
+                    <div class="cd-popup2 tanchu[field:id/]">
+                        <div class="cd-popup-container2">
+                            <div class="cd-buttons2">
+                                <div class="tc_img">
+                                    <div class="hn_list_img2"><img src="[field:litpic/]" alt="[field:title/]" /></div>
+                                    <b>[field:title/]</b><br /><span>[field:zhiwei/]/[field:jingyan/]经验</span>
+                                    <div class="tc_zx"><a href="[field:arcurl/]" target="_blank">查看详情</a><a href="/call.html" target="_blank" class="hover">在线咨询</a></div>
+                                </div>
+                                <div class="tc_text">
+                                    <p><b>好评率：[field:haoping/] 成功案例：[field:anli/]</b>[field:jieshao/]</p>
+                                    <p><b>服务理念</b>[field:linian/]</p>
+                                </div>
+                            </div>
+                            <a href="javascript:;" onclick="cdpopupclose([field:id/])" class="cd-popup-close2">close</a>
+                        </div>
+                    </div>
+                    </li>
+                    
+                    {/dede:sql}
+
+                </ul>                
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="partTit">
+                <p><span class="titspan1"><em class="ft31">环境展示</em></span></p>
+            </div>
+                
+            <div class="clear"></div>
+            
+            <div class="clear"></div>
+            <div class="zhiyin1-about5">
+                <div class="mod_gallerylist">
+                
+                  {dede:field.content1/}
+                  
+                </div>
+            </div>
+
+			<script type="text/javascript">
+            Mediabox.scanPage = function() {
+              var links = $$("a").filter(function(el) {
+                return el.rel && el.rel.test(/^lightbox/i);
+              });
+              $$(links).mediabox({/* Put custom options here */}, null, function(el) {
+                var rel0 = this.rel.replace(/[[]|]/gi," ");
+                var relsize = rel0.split(" ");
+                return (this == el) || ((this.rel.length > 8) && el.rel.match(relsize[1]));
+              });
+            };
+            window.addEvent("domready", Mediabox.scanPage);
+            </script>
+            <div class="clear"></div>
+            
+            <a name="maps"></a>
+            <div class="partTit">
+                <p><span class="titspan1"><em class="ft31">查看地图</em></span></p>
+            </div>
+                
+            <div class="clear"></div>
+            
+            <div class="zhiyin1-about3">
+			<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mnyXX8xVIPkcSnIuqo92faSPz0pohkSM"></script>
+            <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+            <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+            
+            <div id="allmap"></div>
+            <script type="text/javascript">
+                // 百度地图API功能
+                var map = new BMap.Map('allmap');
+                var poi = new BMap.Point({dede:field.namerule/});
+                map.centerAndZoom(poi, 12);
+                map.enableScrollWheelZoom();
+                var myGeo = new BMap.Geocoder();
+                var content = '<div style="margin:0;line-height:28px;padding:2px;">' +'地址：{dede:field.namerule2/}</div>';
+                //创建检索信息窗口对象
+                var searchInfoWindow = null;
+                searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+                        title  : "{dede:field.typename/}",      //标题
+                        width  : 290,             //宽度
+                        height : 35,              //高度
+                        panel  : "panel",         //检索结果面板
+                        enableAutoPan : true,     //自动平移
+                        searchTypes   :[
+                            BMAPLIB_TAB_TO_HERE,  //到这里去
+                            BMAPLIB_TAB_SEARCH,   //周边检索
+                            BMAPLIB_TAB_FROM_HERE //从这里出发 name="maps"
+                        ]
+                });
+                myGeo.getPoint("{dede:field.namerule2/}", function(point){
+                    if (point) {
+                        map.centerAndZoom(point, 16);
+                        map.addOverlay(new BMap.Marker(point));
+                        var marker = new BMap.Marker(point); //创建marker对象
+                        searchInfoWindow.open(marker);
+                    }else{
+                        alert("您选择地址没有解析到结果!");
+                    }
+                }, "四川省");
+            </script>
+            </div>
+            
+        
+        </div>
+        <div class="clear"></div>
+        
+        
+    </div>
+
+
+
+
+
+    <div class="clear"></div>
+    {dede:include filename="footer.htm"/}
+</body>
+</html>

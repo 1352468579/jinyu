@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:field.zhiwei/}_{dede:field.jingyan/}从业经验_金玉良缘网</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+</head>
+
+<body>
+
+	{dede:include filename="header.htm"/}
+
+    <div class="clear"></div>
+	
+    <div class="hn_art">
+        <div class="w1150">
+        	<div class="hn_art_fl">
+            	<div class="hn_art_img"><img src="{dede:field.litpic/}" width="220" alt="{dede:field.title/}{dede:field.zhiwei/}{dede:field.jingyan/}从业经验" /><p>{dede:field.zhiwei/}/{dede:field.jingyan/}从业经验</p></div>
+                <div class="hn_art_text">
+                    <h1>{dede:field.title/} <span>{dede:field.zhiwei/}</span></h1>
+                	<div class="hn_art_info">
+                    	<p><span>从业经验：{dede:field.jingyan/}</span></p>
+                    	<p>{dede:field.jieshao/}</p>
+                        <p><b>服务理念：</b>{dede:field.linian/}</p>
+                        <p><a href="/call.html" target="_blank">咨询红娘</a><i>好评率：<em>{dede:field.haoping/}</em></i> | <i><em>{dede:field.anli/}</em>成功案例</i></p>
+                    </div>
+                </div>
+                
+                <div class="clear"></div>
+                
+                <div class="hn_art_fl2">
+                    <h2>爱情急诊室</h2>
+                    <p>如果您有情感方面的困惑和难题，大胆说出来，红娘帮你解答！</p>
+                    <div class="hn_art_pl">
+                        <form action="#commettop" method="post" name="feedback">
+                            <input type="hidden" name="dopost" value="send" />
+                            <input type="hidden" name="comtype" value="comments">
+                            <input type="hidden" name="aid" value="{dede:field name="id"/}" />
+                            <input type="hidden" name="fid" id='feedbackfid' value="0" />
+                            <textarea class="hn_art_pl_text" name="msg" placeholder="请输入..."></textarea>
+                    </div>
+                    <div class="clear"></div>
+                    
+                    <div class="hn_art_pl_button">
+                            <input type="hidden" name="notuser" id="dcmp-submit-guest" />
+                            <button onClick='PostComment()'>向她提问</button>
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                    
+
+	<a name='commettop'></a>
+				<div id='commetcontentNew'></div>
+				<div id='commetcontent'></div>
+<!--
+//由于评论载入时使用异步传输，因此必须在最后一步加载（DIGG和评论框须放在评论内容前面）
+//如果一定需要提前的把myajax.SendGet改为myajax.SendGet2，但可能会引起页面阻滞
+-->
+<script language='javascript'>
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		 var saveids = saveid.split(',');
+		 var hasid = false;
+		 saveid = '';
+		 j = 1;
+		 for(i=saveids.length-1;i>=0;i--)
+		 {
+		 	  if(saveids[i]==fid && hasid) continue;
+		 	  else {
+		 	  	if(saveids[i]==fid && !hasid) hasid = true;
+		 	  	saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+		 	  	j++;
+		 	  	if(j==10 && hasid) break;
+		 	  	if(j==9 && !hasid) break;
+		 	  }
+		 }
+     if(hasid) { alert('您刚才已表决过了喔！'); return false; }
+     else saveid += ','+fid;
+		 SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+
+  myajax = new DedeAjax(taget_obj,false,false,'','','');
+  myajax.SendGet2("{dede:global.cfg_phpurl /}/feedback.php?aid=1&action="+ftype+"&fid="+fid);
+  DedeXHTTP = null;
+}
+
+function LoadCommets(page)
+{
+		var taget_obj = document.getElementById('commetcontent');
+		var waithtml = "<div style='line-height:50px'><img src='{dede:global.cfg_cmsurl/}/images/loadinglit.gif' />评论加载中...</div>";
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x', waithtml);
+		myajax.SendGet2("{dede:global.cfg_phpurl /}/feedback_ajax.php?dopost=getlist&aid={dede:field.id/}&page="+page);
+		DedeXHTTP = null;
+}
+function PostComment()
+{
+		var f = document.feedback;
+		var nface = '6';
+		var nfeedbacktype = 'feedback';
+		var nnotuser = '';
+		var nusername = '';
+		var npwd = '';
+		var taget_obj = $DE('commetcontentNew');
+		var waithtml = "<div style='line-height:30px'><img src='{dede:global.cfg_cmsurl/}/images/loadinglit.gif' />正在发送中...</div>";
+		if(f.msg.value=='')
+		{
+			alert("评论内容不能为空！");
+			return;
+		}
+		if(f.msg.value.length > 500)
+		{
+			alert("你的评论是不是太长了？请填写500字以内的评论。");
+			return;
+		}
+		if(f.feedbacktype) {
+			for(var i=0; i < f.feedbacktype.length; i++)
+				if(f.feedbacktype[i].checked) nfeedbacktype = f.feedbacktype[i].value;
+		}
+		if(f.face) {
+			for(var j=0; j < f.face.length; j++)
+				if(f.face[j].checked) nface = f.face[j].value;
+		}
+		if(f.notuser.checked) nnotuser = '1';
+		if(f.username) nusername = f.username.value;
+		if(f.pwd) npwd = f.pwd.value;
+		
+		var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+		myajax.sendlang = '{dede:global.cfg_soft_lang/}';
+		myajax.AddKeyN('dopost', 'send');
+		myajax.AddKeyN('aid', '{dede:field.id/}');
+		myajax.AddKeyN('fid', f.fid.value);
+		myajax.AddKeyN('face', nface);
+		myajax.AddKeyN('feedbacktype', nfeedbacktype);
+		myajax.AddKeyN('notuser', nnotuser);
+		myajax.AddKeyN('username', nusername);
+		myajax.AddKeyN('pwd', npwd);
+		myajax.AddKeyN('msg', f.msg.value);
+		myajax.SendPost2('{dede:global.cfg_phpurl/}/feedback_ajax.php');
+		f.msg.value = '';
+		f.fid.value = 0;
+}
+function quoteCommet(fid)
+{
+	document.feedback.fid.value = fid;
+}
+LoadCommets(1);
+</script><!-- //评论内容区结束 -->
+                    
+                </div>
+            </div>
+            
+            
+            <div class="hn_art_fr">
+                <div class="hn_art_fr_ad"><a href=""><img src="/images/ad_03.jpg" width="220" /></a></div>
+            	<h3>为您推荐红娘</h3>
+                <ul>
+                	{dede:arclist titlelen=100 row=6 orderby='rand' typeid='5' addfields='haoping,zhiwei,anli,jingyan' channelid='17'}
+                        <li>
+                            <div class="hn_art_fr_img"><a href="[field:arcurl/]"><img src="[field:litpic /]" width="110" alt="[field:title/]" /></a></div>
+                            <div class="hn_art_fr_info"><a href="[field:arcurl/]">[field:title/]</a><p><i>[field:zhiwei/]</i><br />好评率：<em>[field:haoping/]</em><br />成功案例：<em>[field:anli/]</em><br />工作经验：<em>[field:jingyan/]</em></p></div>
+                            <div class="hn_art_fr_zx"><a href="[field:arcurl/]">找她牵线</a></div>
+                        </li>
+                    {/dede:arclist}
+                </ul>
+            
+                <div class="clear"></div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+    
+	{dede:include filename="footer.htm"/}
+    
+</body>
+</html>

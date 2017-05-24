@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金玉良缘婚恋课堂</title>
+<link href="/images/css/conn.css" type="text/css" rel="stylesheet" />
+<link href="/images/css/list.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/images/js/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+	{dede:include filename="header.htm"/}
+
+    <div class="clear"></div>
+    
+    <div class="ketang">
+    	<div class="w1150">
+            
+            <div class="kt_newhot">
+                <div class="postion">{dede:field name='position'/}</div>
+                <div class="news_imgbox">
+                    <a class="control prev"></a><a class="control next abs"></a>
+                    <div class="slider">
+                        <ul>
+                        	{dede:arclist titlelen='100' typeid='6' row='5' flag='f' orderby='update' addfields='bigimg' channelid='1'}
+                            <li><a href="[field:arcurl/]" target="_blank"><img src="[field:bigimg /]" alt="[field:title/]" /></a></li>
+                            {/dede:arclist}
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript" src="/images/js/YuxiSlider.jQuery.min.js"></script>
+                <script>
+                $(".slider").YuxiSlider({
+                    width:700,
+                    height:300,
+                    control:$('.control'),
+                    during:4000,
+                    speed:400,
+                    mousewheel:true,
+                    direkey:true
+                });
+                </script><!--news_imgbox-->
+                
+                <h2>{dede:field.typename/}</h2>
+                
+                <div class="ke_newslist">
+                                
+                	{dede:list pagesize='10' orderby="id"}
+                    
+                	<div class="newslist_count">
+                    	<a href="[field:arcurl/]" target="_blank">
+                        <h2><b>[[field:typename /]]</b> [field:title/]</h2>
+                        <div class="clear"></div>
+                        <ul>
+                        	[field:id function=Getimgs(@me,3,'li')/]
+                        </ul>
+                        <div class="clear"></div>
+                        <div class="news_info">[field:pubdate function="GetDateTimeMK(@me)"/]</div>
+                        </a>
+                    </div>
+                    
+                    {/dede:list}
+                    
+                </div>
+
+            </div><!--kt_newhot-->
+            
+            
+            <div class="kt_newright">
+            
+            <div class="kt_newright1">
+            	<h3>栏目导航</h3>
+                <ul>
+                	<li><a href="/a/ketang/mt">媒体报道</a></li>
+                	<li><a href="/a/ketang/rj">相亲日记</a></li>
+                	<li><a href="/a/ketang/bd">恋爱宝典</a></li>
+                	<li><a href="/a/ketang/sx">十二生肖</a></li>
+                	<li><a href="/a/ketang/xz">星座匹配</a></li>
+                	<li><a href="/a/ketang/mm">生活秘密</a></li>
+                	<li><a href="/a/ketang/gs">恋爱经历</a></li>
+                	<li><a href="/a/ketang/cgg">成功故事</a></li>
+                </ul>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="kt_ewm"><img src="/images/rightewm.jpg" width="340" alt="金玉良缘关注微信二维码" /></div>
+            
+            <div class="clear"></div>
+            
+            <div class="kt_newright2">
+            	<h3>24小时推荐热文</h3>
+            	<ul>
+                	{dede:arclist titlelen=100 row=5 orderby='click' typeid='6' subday='7'}
+                	<li>
+                    	<div class="kt_newright2_img"><a href="[field:arcurl/]"><img src="[field:litpic /]" alt="[field:title/]" /></a></div>
+                        <div class="kt_newright2_title"><a href="[field:arcurl/]">[field:title/]</a></div>
+                        <div class="kt_newright2_info">[field:info/]</div>
+                    </li>
+                    {/dede:arclist}
+                </ul>
+            </div><!--kt_newright2-->
+            
+            <div class="clear"></div>
+            
+            <div class="kt_newright3">
+            	<h3>联系我们</h3>
+                <div class="kt_newright_call">
+                	<p>红娘热线：<i>028-86145520</i></p>
+                	<p>联系地址：成都市青羊区西御街西御大厦A座25楼</p>
+                    <p><a href="/call.html" target="_blank">咨询红娘</a> <a href="/call.html" target="_blank">疑问解答</a></p>
+                </div>
+            </div>
+            
+            </div>
+            
+        </div>
+    </div><!--ketang-->
+
+	<div class="clear"></div>
+    
+    {dede:include filename="footer.htm"/}
+</body>
+</html>
