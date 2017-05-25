@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap的HTML标准模板</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+    <style>
+        .row{
+            background-color: #E6E6E8;
+            height: 50px;
+        }
+        h3{
+            color: #F04747;
+            display: inline-block;
+            line-height: 10px;
+        }
+        .container{
+            text-align: center;
+            height: 50px;
+        }
+        .container a{
+            line-height: 50px;
+            display: inline-block;
+        }
+        .prev{
+            background-image: url("img/header_03.png");
+            background-position: 0px -40px;
+            margin: 10px;
+            float: left;
+            height: 30px;
+            width: 30px;
+        }
+        .next{
+            background-image: url("img/header_03.png");
+            background-position: -40px -40px;
+            float: right;
+            margin: 10px;
+            height: 30px;
+            width: 30px;
+        }
+        .row_left{
+            background: url("img/girl.png");
+            background-size: 100% 100%;
+            width: 30%;
+            height: 100px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .row_right{
+            width: 60%;
+            display: inline-block;
+            vertical-align: top;
+            min-height: 100px;
+        }
+        .row_right_up{
+            /*background-color: #006600;*/
+            width: 100%;
+            height: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .row_right_up span{
+            font-size: large;
+            font-weight: bold;
+            line-height: 40px;
+        }
+        .row_right_down{
+            /*background-color: #0000cc;*/
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header class="row">
+    <div class="container">
+        <a href="" class="text-left prev"></a>
+        <h3 class="text-center">消息中心</h3>
+        <a href="" class="text-right next"></a>
+    </div>
+</header>
+<div class="content">
+    <dl class="list-group text-center">
+        <dd class="list-group-item">
+            <div class="row_left"></div>
+            <div class="row_right">
+                <div class="row_right_up text-left">
+                    <span>消息系统</span>
+                </div>
+                <div class="row_right_down">
+                    <span>回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息</span>
+                </div>
+            </div>
+        </dd>
+        <dd class="list-group-item">
+            <div class="row_left"></div>
+            <div class="row_right">
+                <div class="row_right_up text-left">
+                    <span>消息系统</span>
+                </div>
+                <div class="row_right_down">
+                    <span>回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息</span>
+                </div>
+            </div>
+        </dd>
+        <dd class="list-group-item">
+            <div class="row_left"></div>
+            <div class="row_right">
+                <div class="row_right_up text-left">
+                    <span>消息系统</span>
+                </div>
+                <div class="row_right_down">
+                    <span>回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息回复的消息</span>
+                </div>
+            </div>
+        </dd>
+    </dl>
+</div>
+</body>
+</html>
